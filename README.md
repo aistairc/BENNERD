@@ -49,7 +49,10 @@ Besides BENNER, we also release an online text analyze system to meet real-time 
     ------------------  ------------   ---------  -----------    ------------   ---------  -----------
     SciBERT                 88.15        83.19       85.60           87.37        80.21       83.63
     AIRC BERT               86.64        82.61       84.58           86.14        79.20       82.52
+    ClinicalCovid BERT      87.62        83.34       85.42           86.98        80.43       83.58
     --------------------------------------------------------------------------------------------------
+    
+    [*] https://github.com/manueltonneau/covid-berts
 
 ### Categorical Performance Based on Selected Categories
 
