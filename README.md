@@ -40,7 +40,7 @@ Besides BENNER, we also release an online text analyze system to meet real-time 
     Our Model (BENNER)      80.39        82.47       81.41           80.54        82.54       81.53
     --------------------------------------------------------------------------------------------------
 
-### NER Performance using different versions of pre-trained BERT models
+### NER Performance using different pre-trained BERT models
 
     --------------------------------------------------------------------------------------------------
           Model                   Development-set                              Test-set
@@ -50,6 +50,7 @@ Besides BENNER, we also release an online text analyze system to meet real-time 
     SciBERT                 88.15        83.19       85.60           87.37        80.21       83.63
     AIRC BERT               86.64        82.61       84.58           86.14        79.20       82.52
     ClinicalCovid BERT      87.62        83.34       85.42           86.98        80.43       83.58
+    Covid BERT Base         85.56        62.56       72.27           85.29        63.29       72.66
     --------------------------------------------------------------------------------------------------
     
     [*] https://github.com/manueltonneau/covid-berts
