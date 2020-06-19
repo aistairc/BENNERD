@@ -52,7 +52,7 @@ Besides BENNER, we also release an online text analyze system to meet real-time 
     ClinicalCovid BERT      87.62        83.34       85.42           86.98        80.43       83.58
     Covid BERT Base         85.56        62.56       72.27           85.29        63.29       72.66
     --------------------------------------------------------------------------------------------------
-    SciBERT (latest)                                                 88.11        83.81       85.91
+    SciBERT (latest)        89.22        87.05       88.12           88.11        83.81       85.91
     
     [*] https://github.com/manueltonneau/covid-berts
 
