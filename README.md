@@ -16,7 +16,7 @@ neural model for NER  by addressing  distantly supervise-based CORD-NER data-set
 
 ### BENNER DEMO
 Besides BENNER, we also release an online text analyze system to meet real-time text annotate with visualization. 
-* https://under_construction
+* http://prm-ezcatdb.cbrc.jp/denner/
 
 ### Sample Data Format
     T1	GENE_OR_GENOME 0 31	Angiotensin-converting enzyme 2
@@ -47,12 +47,10 @@ Besides BENNER, we also release an online text analyze system to meet real-time 
                         -------------------------------------    -------------------------------------       
                         Precision(%)   Recall(%)  F1-score(%)    Precision(%)   Recall(%)  F1-score(%)
     ------------------  ------------   ---------  -----------    ------------   ---------  -----------
-    SciBERT                 88.15        83.19       85.60           87.37        80.21       83.63
-    AIRC BERT               86.64        82.61       84.58           86.14        79.20       82.52
+    SciBERT                 89.22        87.05       88.12           88.11        83.81       85.91
     ClinicalCovid BERT      87.62        83.34       85.42           86.98        80.43       83.58
     Covid BERT Base         85.56        62.56       72.27           85.29        63.29       72.66
     --------------------------------------------------------------------------------------------------
-    SciBERT (latest)        89.22        87.05       88.12           88.11        83.81       85.91
     
     [*] https://github.com/manueltonneau/covid-berts
 
@@ -95,26 +93,6 @@ Besides BENNER, we also release an online text analyze system to meet real-time 
 
 - *Note: The results of SciSpacy are based on ramdomly picked 1000 sentences from CORD-NER dataset, where scores with BENNER is on 4,500
 test documents.  
-
-### Requirements
-  -  =>
-  -  =>
-  - 
-  
-  
-### How to run
-Training
-```
-$ TODO
-```
-Prediction
-```
-$ TODO
-```
-Evaluation Script
-```
-$ TODO
-```
 
 ### Acknowledgement:
 
