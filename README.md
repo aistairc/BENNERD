@@ -1,4 +1,4 @@
-## Implementation of BERT-based Exhaustive Neural Named Entity Recognition (BENNER) on COVID-19 Dataset
+## Implementation of BERT-based Exhaustive Neural Named Entity Recognition and Normalization (BENNERD) on COVID-19 Dataset
 
 ### Backgroud
 In response to the coronavirus disease 2019 (COVID-19) pandemic, White House and a coalition of 
