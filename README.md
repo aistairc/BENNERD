@@ -1,4 +1,4 @@
-## Implementation of BERT-based Exhaustive Neural Named Entity Recognition and Normalization (BENNERD) on COVID-19 Dataset
+## Implementation of BERT-based Exhaustive Neural Named Entity Recognition and Disambiguision (BENNERD) on COVID-19 Dataset
 
 ### Backgroud
 In response to the coronavirus disease 2019 (COVID-19) pandemic, White House and a coalition of 
@@ -10,12 +10,12 @@ annotation (CORD-NER), a distantly supervised dataset that includes 29,500 docum
     * https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge (CORD-19)
     * https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x (CORD-NER)
  
-### BENNER Description
+### BENNERD Description
 We implement BERT-based exhaustive approach, an open-source scalable and extensible system that implement 
-neural model for NER  by addressing  distantly supervise-based CORD-NER data-set.
+neural models like named entity recognition (NER) and entity disambiguision (ED) or a.k.a entity linking (EL) by addressing  distantly supervise-based CORD-NER data-set.
 
-### BENNER DEMO
-Besides BENNER, we also release an online text analyze system to meet real-time text annotate with visualization. 
+### BENNERD DEMO
+Besides BENNERD, we also release an online text analyze system to meet real-time text annotation with visualization. 
 * http://prm-ezcatdb.cbrc.jp/denner/
 
 ### Sample Data Format
