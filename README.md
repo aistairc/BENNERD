@@ -48,9 +48,9 @@ Besides BENNERD, we also release an online text analyze system to meet real-time
                         -------------------------------------    -------------------------------------       
                         Precision(%)   Recall(%)  F1-score(%)    Precision(%)   Recall(%)  F1-score(%)
     ------------------  ------------   ---------  -----------    ------------   ---------  -----------
-    SciBERT                 89.22        87.05       88.12           88.11        83.81       85.91
-    ClinicalCovid BERT      87.62        83.34       85.42           86.98        80.43       83.58
-    Covid BERT Base         85.56        62.56       72.27           85.29        63.29       72.66
+    ClinicalCovid BERT      84.62        86.43       85.52           82.83        83.23       83.03
+    SciBERT                 84.03        87.05       85.51           82.16        83.81       82.98
+    Covid BERT Base         78.31        66.80       72.10           77.44        66.80       71.73
     --------------------------------------------------------------------------------------------------
     
     [*] https://github.com/manueltonneau/covid-berts
