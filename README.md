@@ -55,7 +55,9 @@ Besides BENNERD, we also release an online text analyze system to meet real-time
     
     [*] https://github.com/manueltonneau/covid-berts
 
-### Categorical Performance Based on Selected Categories
+### Categorical Performance Based on All Categories
+
+We also show the score of NER model trained on ClinicalCovid BERT on all categories in the dataset.
 
     ----------------------------------------------------------------------------------------------
     Label                     Precision(%)   Recall(%)   F1-score(%)     #TPs      #Preds   #Golds
@@ -161,7 +163,7 @@ Performance comparison of BENNERD on three major biomedical entity types in COVI
                         --------------------------  --------------------------  --------------------------       
                         Prec.(%)   Rec.(%)  F1.(%)  Prec.(%)   Rec.(%)  F1.(%)  Prec.(%)   Rec.(%)  F1.(%)
     ------------------  --------   -------  ------  --------   -------  ------  --------   -------  ------
-    Our Model (BENNERD)  75.99      78.08    77.02   79.99      81.79    80.88   83.96      83.49    83.73
+    Our Model (BENNERD)  76.07      74.8    75.45     83.55     84.60    84.07    84.85      84.9    84.92
     ------------------------------------------------------------------------------------------------------
     
 ### Acknowledgement:
