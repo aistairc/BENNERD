@@ -18,17 +18,27 @@ neural models like named entity recognition (NER) and entity disambiguision (ED)
 Besides BENNERD, we also release an online text analyze system to meet real-time text annotation with visualization. 
 * http://prm-ezcatdb.cbrc.jp/denner/
 
-### Sample Data Format
+### Sample Data Format for extended CORD-NER 
     T1	GENE_OR_GENOME 0 31	Angiotensin-converting enzyme 2
+    N1	Reference T1	C0960880
     T2	GENE_OR_GENOME 33 37	ACE2
+    N2	Reference T2	C1422064
     T3	CORONAVIRUS 44 54	SARS-CoV-2
+    N3	Reference T3	C5203676
     T4	CHEMICAL 55 63	receptor
+    N4	Reference T4	C0597357
     T5	CORONAVIRUS 120 130	SARS-CoV-2
+    N5	Reference T3	C5203676
     T6	EVOLUTION 158 170	phylogenetic
+    N6	Reference T6	cui_less
     T7	WILDLIFE 195 198	bat
+    N7	Reference T7	C1412726
     T8	CORONAVIRUS 214 224	SARS-CoV-2
+    N8	Reference T3	C5203676
     T9	NORP 259 277	intermediate hosts
+    N9	Reference T9	cui_less
     T10	CORONAVIRUS 282 292	SARS-CoV-2
+    N10	Reference T3	C5203676
 
 
 ### NER Performance using different pre-trained BERT models
