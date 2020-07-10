@@ -30,15 +30,6 @@ Besides BENNERD, we also release an online text analyze system to meet real-time
     T9	NORP 259 277	intermediate hosts
     T10	CORONAVIRUS 282 292	SARS-CoV-2
 
-### NER Annotation Performance
-
-    --------------------------------------------------------------------------------------------------
-          Model                   Development-set                              Test-set
-                        -------------------------------------    -------------------------------------       
-                        Precision(%)   Recall(%)  F1-score(%)    Precision(%)   Recall(%)  F1-score(%)
-    ------------------  ------------   ---------  -----------    ------------   ---------  -----------
-    Our Model (BENNER)      80.39        82.47       81.41           80.54        82.54       81.53
-    --------------------------------------------------------------------------------------------------
 
 ### NER Performance using different pre-trained BERT models
 
@@ -88,18 +79,25 @@ Besides BENNERD, we also release an online text analyze system to meet real-time
     SciSpacy*              -          -        -     86.97      51.86    64.69   80.31      59.65    68.46
     (BC5CDR)
     ------------------  --------------------------  --------------------------  --------------------------
-    Our Model (BENNER)  75.99      78.08    77.02   79.99      81.79    80.88   83.96      83.49    83.73
+    CORD-NER System      82.14      74.68    72.23   82.93      75.22    78.89   75.73      68.42    71.89
     ------------------------------------------------------------------------------------------------------
 
-- *Note: The results of SciSpacy are based on ramdomly picked 1000 sentences from CORD-NER dataset, where scores with BENNER is on 4,500
-test documents.  
+- *Note: The results of SciSpacy are based on ramdomly picked 1000 sentences from CORD-NER dataset.
 
+### BENNERD Performances based on indirect comparison with State-of-the-art Models on CORD-NER Dataset
+Performance comparison of BENNERD on three major biomedical entity types in COVID-19 corpus. Since the manually annotated CORD-NER test-set is not publicly available therefore we can not directly compare our system performances. Instead, here we  show  the  performance  of gene, chemical, and disease based on our 4,500 test-set.
+
+    ------------------------------------------------------------------------------------------------------
+          Model                   Gene                      Chemical                     Disease
+                        --------------------------  --------------------------  --------------------------       
+                        Prec.(%)   Rec.(%)  F1.(%)  Prec.(%)   Rec.(%)  F1.(%)  Prec.(%)   Rec.(%)  F1.(%)
+    ------------------  --------   -------  ------  --------   -------  ------  --------   -------  ------
+    Our Model (BENNERD)  75.99      78.08    77.02   79.99      81.79    80.88   83.96      83.49    83.73
+    ------------------------------------------------------------------------------------------------------
+    
 ### Acknowledgement:
 
 This work is based on results obtained from a project commissioned by the PRISM
 
-### Citing this work
-When using this implementation, please use the following citation:
-* under_construction
 
 
