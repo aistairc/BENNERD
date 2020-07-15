@@ -16,7 +16,7 @@ neural models like named entity recognition (NER) and entity disambiguision (ED)
 
 ### BENNERD DEMO
 Besides BENNERD, we also release an online text analyze system to meet real-time text annotation with visualization. 
-* http://prm-ezcatdb.cbrc.jp/denner/
+* http://prm-ezcatdb.cbrc.jp/bennerd/
 
 ### Sample Data Format for extended CORD-NER 
     T1	GENE_OR_GENOME 0 31	Angiotensin-converting enzyme 2
