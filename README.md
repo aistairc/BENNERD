@@ -7,16 +7,16 @@ into account by data mining group of University of Illinois to create a comprehe
 annotation (CORD-NER), a distantly supervised dataset that includes 29,500 documents. 
 
 #### Corpora Link
-    * https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge (CORD-19)
-    * https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x (CORD-NER)
+    * [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)
+    * [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)
  
 ### BENNERD Description
 We implement BERT-based exhaustive approach, an open-source scalable and extensible system that implement 
 neural models like named entity recognition (NER) and entity disambiguision (ED) or a.k.a entity linking (EL) by addressing  distantly supervise-based CORD-NER data-set.
 
-### BENNERD DEMO
+### [BENNERD DEMO](http://prm-ezcatdb.cbrc.jp/bennerd/)
 Besides BENNERD, we also release an online text analyze system to meet real-time text annotation with visualization. 
-* http://prm-ezcatdb.cbrc.jp/bennerd/
+* [http://prm-ezcatdb.cbrc.jp/bennerd/](http://prm-ezcatdb.cbrc.jp/bennerd/)
 
 ### Sample Data Format for extended CORD-NER 
     T1	GENE_OR_GENOME 0 31	Angiotensin-converting enzyme 2
