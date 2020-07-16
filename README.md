@@ -188,7 +188,7 @@ We are the first to perform entity linking (EL) task on [CORD-19](https://www.ka
 
 ## Acknowledgement:
 
-This work is based on results obtained from a project commissioned by the PRISM
+This work is based on results obtained from a project commissioned by the Public/Private R&D Investment Strategic Expansion PrograM (PRISM)
 
 
 
