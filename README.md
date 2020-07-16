@@ -10,14 +10,13 @@ annotation ([CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij9
 - [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)
  
 ## BENNERD Description
-We implemente a BERT-based exhaustive approach, a scalable and extensible system that implement neural models like named entity recognition (NER) and entity disambiguision (ED) or a.k.a entity linking (EL) by addressing distantly supervise-based [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set.
+We implement a BERT-based exhaustive approach, a scalable and extensible system that implement neural models like named entity recognition (NER) and entity disambiguision (ED) or a.k.a entity linking (EL) by addressing distantly supervise-based [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set.
 
 ### [BENNERD DEMO](http://prm-ezcatdb.cbrc.jp/bennerd/)
-Besides BENNERD, we also release an online text analyze system to meet real-time text annotation with visualization. 
-
+The BENNERD system provides a web interface to facilitate the process of text annotation and its disambiguation without any training for end users.
 * [http://prm-ezcatdb.cbrc.jp/bennerd/](http://prm-ezcatdb.cbrc.jp/bennerd/)
 
-## Sample Data Format of Extended CORD-NER 
+### Sample Data Format of Extended CORD-NER 
 ```
     T1	GENE_OR_GENOME 0 31	Angiotensin-converting enzyme 2
     N1	Reference T1	C0960880
@@ -40,8 +39,9 @@ Besides BENNERD, we also release an online text analyze system to meet real-time
     T10	CORONAVIRUS 282 292	SARS-CoV-2
     N10	Reference T3	C5203676
 ```
-
-## NER Performances using Different Pre-trained BERT Models
+## Named Entity Recognition
+TODO
+### NER Performances using Different Pre-trained BERT Models
 ```
     --------------------------------------------------------------------------------
           Model                Development-set                      Test-set
