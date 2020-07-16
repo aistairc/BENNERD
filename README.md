@@ -156,16 +156,41 @@ We also show the score of NER model trained on ClinicalCovid BERT on all categor
 - *Note: The results of SciSpacy are based on ramdomly picked 1000 sentences from CORD-NER dataset.
 
 ### BENNERD Performances based on indirect comparison with State-of-the-art Models on CORD-NER Dataset
-Performance comparison of BENNERD on three major biomedical entity types in COVID-19 corpus. Since the manually annotated CORD-NER test-set is not publicly available therefore we can not directly compare our system performances. Instead, here we  show  the  performance  of gene, chemical, and disease based on our 4,500 test-set.
+Performance comparison of our model BENNERD on three major biomedical entity types in COVID-19 corpus. Since the manually annotated CORD-NER test-set is not publicly available therefore we can not directly compare our system performances. Instead, here we  show  the  performance  of gene, chemical, and disease based on our 4,500 test-set.
 
     ------------------------------------------------------------------------------------------------------
           Model                   Gene                      Chemical                     Disease
                         --------------------------  --------------------------  --------------------------       
                         Prec.(%)   Rec.(%)  F1.(%)  Prec.(%)   Rec.(%)  F1.(%)  Prec.(%)   Rec.(%)  F1.(%)
     ------------------  --------   -------  ------  --------   -------  ------  --------   -------  ------
-    Our Model (BENNERD)  76.07      74.8    75.45     83.55     84.60    84.07    84.85      84.9    84.92
+    BENNERD              76.07      74.8     75.45   83.55      84.60    84.07    84.85     84.9     84.92
     ------------------------------------------------------------------------------------------------------
-    
+
+### Entity Linking Performances Test sets.
+We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. UMLS-based test set 2. Manually annotated test set. 
+
+## Entity Linking Performances of BENNERD on our UMLS-based test set.
+
+    -------------------------------------------------------------------------------------------
+    Model                                            UMLS-based Test Set
+                                     ----------------------------------------------------------       
+                                        A@1       A@2       A@3       A@4       A@5      A@6(%)
+    -----------------------------    --------  --------  --------  --------  --------  --------
+    BENNERD + NER's Prediction         27.61     44.56     49.74     51.88     53.08     54.19
+    BENNERD + NER's Gold               29.78     48.33     53.89     56.22     57.53     58.74
+    BENNERD + NER's True Positive      30.31     48.91     54.60     56.95     58.27     59.49
+    -------------------------------------------------------------------------------------------
+
+## Entity Linking Performances of BENNERD on our manually annotated test set.
+
+    --------------------------------------------------------------------------------
+    Model                               Manually Annotated Test Set
+                        ------------------------------------------------------------       
+                           A@1       A@2       A@3       A@4       A@5      A@6(%)
+    ------------------  --------  --------  --------  --------  --------  --------
+    BENNERD               24.27     42.95     47.07     48.81     50.00     50.92
+    --------------------------------------------------------------------------------
+
 ### Acknowledgement:
 
 This work is based on results obtained from a project commissioned by the PRISM
