@@ -10,10 +10,11 @@ annotation ([CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij9
 - [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)
  
 ## BENNERD Description
-Our [Knowledge and Information Research Team](https://www.airc.aist.go.jp/en/kirt/) in [AIRC](https://www.airc.aist.go.jp/en/) has implemented a BERT-based exhaustive approach, a scalable and extensible system that implement neural models like named entity recognition (NER) and entity disambiguision (ED) or a.k.a entity linking (EL) by addressing distantly supervise-based [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set.
+We implemente a BERT-based exhaustive approach, a scalable and extensible system that implement neural models like named entity recognition (NER) and entity disambiguision (ED) or a.k.a entity linking (EL) by addressing distantly supervise-based [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set.
 
 ### [BENNERD DEMO](http://prm-ezcatdb.cbrc.jp/bennerd/)
 Besides BENNERD, we also release an online text analyze system to meet real-time text annotation with visualization. 
+
 * [http://prm-ezcatdb.cbrc.jp/bennerd/](http://prm-ezcatdb.cbrc.jp/bennerd/)
 
 ## Sample Data Format of Extended CORD-NER 
@@ -128,32 +129,32 @@ We also show the score of NER model trained on ClinicalCovid BERT on all categor
   
 ## Performance Comparison with State-of-the-art Models on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset
 
-    -------------------------------------------------------------------------------------------------
-        Model                   Gene                      Chemical                     Disease
-                     --------------------------  --------------------------  ------------------------      
-                     Precision   Recall   F1(%)  Precision   Recall  F1(%)   Precision  Recall  F1(%)
-    ---------------  ---------   ------  ------  ---------   ------  -----   --------   ------  -----
-    SciSpacy*          91.48      82.06   86.51    64.66     39.81   49.28     8.11      2.75    4.11
+    ---------------------------------------------------------------------------------------------
+        Model                  Gene                    Chemical                  Disease
+                     ------------------------  ------------------------  ------------------------     
+                     Precision  Recall  F1(%)  Precision  Recall  F1(%)  Precision  Recall  F1(%)
+    ---------------  ---------  ------  -----  ---------  ------  -----  ---------  ------  -----
+    SciSpacy*          91.48    82.06   86.51    64.66    39.81   49.28     8.11     2.75    4.11
     (BIONLP13CG)
-    ---------------  --------------------------  -------------------------  -------------------------
-    SciSpacy*            -          -       -      86.97     51.86   64.69     80.31    59.65   68.46
+    ---------------  ------------------------  ------------------------  ------------------------
+    SciSpacy*            -        -       -      86.97    51.86   64.69     80.31   59.65   68.46
     (BC5CDR)
-    ---------------  --------------------------  --------------------------  ------------------------
-    CORD-NER System    82.14      74.68   72.23    82.93     75.22   78.89     75.73    68.42   71.89
-    -------------------------------------------------------------------------------------------------
+    ---------------  ------------------------  ------------------------  ------------------------
+    CORD-NER System    82.14    74.68   72.23    82.93    75.22   78.89     75.73   68.42   71.89
+    ---------------------------------------------------------------------------------------------
 
 - *Note: The results of SciSpacy are based on ramdomly picked 1000 sentences from CORD-NER dataset.
 
 ## BENNERD Performances based on Indirect comparison with State-of-the-art Models on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset
 Performance comparison of our model BENNERD on three major biomedical entity types in CORD-19 corpus. Since the manually annotated CORD-NER test set is not publicly available therefore we can not directly compare our system performances. Instead, here we  show  the  performance  of gene, chemical, and disease based on our 5,000 test set.
 
-    -------------------------------------------------------------------------------------------------
-          Model                   Gene                      Chemical                     Disease
-                        --------------------------  --------------------------  --------------------------       
-                        Prec.(%)   Rec.(%)  F1.(%)  Prec.(%)   Rec.(%)  F1.(%)  Prec.(%)   Rec.(%)  F1.(%)
-    ------------------  --------   -------  ------  --------   -------  ------  --------   -------  ------
-    BENNERD              76.07      74.8     75.45   83.55      84.60    84.07    84.85     84.9     84.92
-    ------------------------------------------------------------------------------------------------------
+    ----------------------------------------------------------------------------------------------
+        Model                   Gene                    Chemical                   Disease
+                      ------------------------  ------------------------  ------------------------       
+                      Precision  Recall  F1(%)  Precision  Recall  F1(%)  Precision  Recall  F1(%)
+    ---------------   ---------  ------  -----  ---------  ------  -----  ---------  ------  -----
+    BENNERD              76.07    74.8   75.45   83.55     84.60   84.07    84.85     84.9   84.92
+    ----------------------------------------------------------------------------------------------
 
 ## Entity Linking With BENNERD System
 
