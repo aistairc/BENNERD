@@ -10,7 +10,7 @@ annotation ([CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij9
 - [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)
  
 ## BENNERD Description
-Our [Knowledge and Information Team](https://www.airc.aist.go.jp/en/kirt/) in [AIRC](https://www.airc.aist.go.jp/en/) has implemented a BERT-based exhaustive approach, a scalable and extensible system that implement neural models like named entity recognition (NER) and entity disambiguision (ED) or a.k.a entity linking (EL) by addressing distantly supervise-based [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set.
+Our [Knowledge and Information Research Team](https://www.airc.aist.go.jp/en/kirt/) in [AIRC](https://www.airc.aist.go.jp/en/) has implemented a BERT-based exhaustive approach, a scalable and extensible system that implement neural models like named entity recognition (NER) and entity disambiguision (ED) or a.k.a entity linking (EL) by addressing distantly supervise-based [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set.
 
 ### [BENNERD DEMO](http://prm-ezcatdb.cbrc.jp/bennerd/)
 Besides BENNERD, we also release an online text analyze system to meet real-time text annotation with visualization. 
