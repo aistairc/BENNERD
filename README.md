@@ -1,7 +1,7 @@
 # Implementation of BERT-based Exhaustive Neural Named Entity Recognition and Disambiguision (BENNERD) on CORD-19 Dataset
 
 ## Backgroud
-**I**n response to the coronavirus disease 2019 (COVID-19) pandemic, White House and a coalition of 
+In response to the coronavirus disease 2019 (COVID-19) pandemic, White House and a coalition of 
 research groups have released COVID-19 Open Research Dataset ([CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)). This dataset further taken into account by data mining group of University of Illinois to create a comprehensive named entity 
 annotation ([CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)), a distantly supervised dataset that includes 29,500 documents. 
 
@@ -153,7 +153,7 @@ Performance comparison of our model BENNERD on three major biomedical entity typ
                       ------------------------  ------------------------  ------------------------       
                       Precision  Recall  F1(%)  Precision  Recall  F1(%)  Precision  Recall  F1(%)
     ---------------   ---------  ------  -----  ---------  ------  -----  ---------  ------  -----
-    BENNERD              76.07    74.8   75.45   83.55     84.60   84.07    84.85     84.9   84.92
+    BENNERD             76.07     74.8   75.45    83.55     84.60  84.07    84.85     84.9   84.92
     ----------------------------------------------------------------------------------------------
 
 ## Entity Linking With BENNERD System
@@ -180,13 +180,13 @@ We are the first to perform entity linking (EL) task on [CORD-19](https://www.ka
 We show the EL performances on manually annotated test set.
 
 ```
-    --------------------------------------------------------------------------------
+    ------------------------------------------------------------------------------
     Model                               Manually Annotated Test Set
-                        ------------------------------------------------------------       
+                         ---------------------------------------------------------       
                            A@1       A@2       A@3       A@4       A@5      A@6(%)
-    ------------------  --------  --------  --------  --------  --------  --------
+    ------------------   -------   -------   -------   -------   -------   -------
     BENNERD               24.27     42.95     47.07     48.81     50.00     50.92
-    --------------------------------------------------------------------------------
+    ------------------------------------------------------------------------------
 ```
 
 ## Acknowledgement:
