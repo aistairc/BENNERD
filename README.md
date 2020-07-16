@@ -13,7 +13,7 @@ annotation ([CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij9
 We implement a BERT-based exhaustive approach, a scalable and extensible system that implement neural models like named entity recognition (NER) and entity disambiguision (ED) or a.k.a entity linking (EL) by addressing distantly supervise-based [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set.
 
 ### [BENNERD DEMO](http://prm-ezcatdb.cbrc.jp/bennerd/)
-The BENNERD system provides a web interface to facilitate the process of text annotation and its disambiguation without any training for end users.
+The BENNERD system provides a [web interface](http://prm-ezcatdb.cbrc.jp/bennerd/) to facilitate the process of text annotation and its disambiguation without any training for end users.
 * [http://prm-ezcatdb.cbrc.jp/bennerd/](http://prm-ezcatdb.cbrc.jp/bennerd/)
 
 ### Sample Data Format of Extended CORD-NER 
@@ -39,7 +39,7 @@ The BENNERD system provides a web interface to facilitate the process of text an
     T10	CORONAVIRUS 282 292	SARS-CoV-2
     N10	Reference T3	C5203676
 ```
-## Named Entity Recognition
+## Neural Named Entity Recognition
 TODO
 ### NER Performances using Different Pre-trained BERT Models
 ```
@@ -57,7 +57,7 @@ TODO
 
 ## Categorical Performances Based on All Categories
 
-We also show the score of NER model trained on ClinicalCovid BERT on all categories in the dataset.
+We show the categorical performances of NER model trained on ClinicalCovid BERT over the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset.
 
     ----------------------------------------------------------------------------------------------
     Label                               Precision   Recall   F1-score(%)   #TPs    #Preds   #Golds
