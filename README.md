@@ -39,7 +39,7 @@ Besides BENNERD, we also release an online text analyze system to meet real-time
     N10	Reference T3	C5203676
 
 
-## NER Performance using Different Pre-trained BERT Models
+## NER Performances using Different Pre-trained BERT Models
 
     --------------------------------------------------------------------------------------------------
           Model                   Development-set                              Test-set
@@ -53,7 +53,7 @@ Besides BENNERD, we also release an online text analyze system to meet real-time
     
     [*] https://github.com/manueltonneau/covid-berts
 
-## Categorical Performance Based on All Categories
+## Categorical Performances Based on All Categories
 
 We also show the score of NER model trained on ClinicalCovid BERT on all categories in the dataset.
 
@@ -161,10 +161,13 @@ Performance comparison of our model BENNERD on three major biomedical entity typ
     BENNERD              76.07      74.8     75.45   83.55      84.60    84.07    84.85     84.9     84.92
     ------------------------------------------------------------------------------------------------------
 
-## Entity Linking Performances on Test Sets.
+## Entity Linking With BENNERD System
+
+### Entity Linking Performances on Test Sets.
 We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. UMLS-based test set 2. Manually annotated test set. 
 
-### Entity Linking Performances of BENNERD on UMLS-based Test Set.
+#### Entity Linking Performances of BENNERD on UMLS-based Test Set.
+We show the EL performances on UMLS-based test set. We report Accuracy@n, where n= 1,10,20,30,40,50. Accuracy@1, goldcandidate was ranked highest. Accuracy@{10, 20, 30, 40, 50} indicates, gold candidate was in top 10, 20, 30, 40or in 50 predictions of the ranker.
 
     -------------------------------------------------------------------------------------------
     Model                                            UMLS-based Test Set
@@ -176,8 +179,9 @@ We are the first to perform entity linking (EL) task on [CORD-19](https://www.ka
     BENNERD + NER's True Positive      30.31     48.91     54.60     56.95     58.27     59.49
     -------------------------------------------------------------------------------------------
 
-### Entity Linking Performances of BENNERD on Manually Annotated Test Set.
+#### Entity Linking Performances of BENNERD on Manually Annotated Test Set.
 
+We show the EL performances on manually annotated test set.
     --------------------------------------------------------------------------------
     Model                               Manually Annotated Test Set
                         ------------------------------------------------------------       
