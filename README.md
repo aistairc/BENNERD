@@ -1,7 +1,7 @@
 # Implementation of BERT-based Exhaustive Neural Named Entity Recognition and Disambiguision (BENNERD) on CORD-19 Dataset
 
 ## Backgroud
-In response to the coronavirus disease 2019 (COVID-19) pandemic, White House and a coalition of 
+**I**n response to the coronavirus disease 2019 (COVID-19) pandemic, White House and a coalition of 
 research groups have released COVID-19 Open Research Dataset ([CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)). This dataset further taken into account by data mining group of University of Illinois to create a comprehensive named entity 
 annotation ([CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)), a distantly supervised dataset that includes 29,500 documents. 
 
