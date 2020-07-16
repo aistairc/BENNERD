@@ -161,7 +161,7 @@ Performance comparison of our model BENNERD on three major biomedical entity typ
     BENNERD              76.07      74.8     75.45   83.55      84.60    84.07    84.85     84.9     84.92
     ------------------------------------------------------------------------------------------------------
 
-## Entity Linking Performances Test sets.
+## Entity Linking Performances on Test sets.
 We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. UMLS-based test set 2. Manually annotated test set. 
 
 ### Entity Linking Performances of BENNERD on our UMLS-based test set.
