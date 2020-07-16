@@ -168,6 +168,7 @@ We are the first to perform entity linking (EL) task on [CORD-19](https://www.ka
 
 #### Entity Linking Performances of BENNERD on UMLS-based Test Set.
 
+```
     -------------------------------------------------------------------------------------------
     Model                                            UMLS-based Test Set
                                      ----------------------------------------------------------       
@@ -177,10 +178,13 @@ We are the first to perform entity linking (EL) task on [CORD-19](https://www.ka
     BENNERD + NER's Gold               29.78     48.33     53.89     56.22     57.53     58.74
     BENNERD + NER's True Positive      30.31     48.91     54.60     56.95     58.27     59.49
     -------------------------------------------------------------------------------------------
+```
 
 #### Entity Linking Performances of BENNERD on Manually Annotated Test Set.
 
 We show the EL performances on manually annotated test set.
+
+```
     --------------------------------------------------------------------------------
     Model                               Manually Annotated Test Set
                         ------------------------------------------------------------       
@@ -188,6 +192,7 @@ We show the EL performances on manually annotated test set.
     ------------------  --------  --------  --------  --------  --------  --------
     BENNERD               24.27     42.95     47.07     48.81     50.00     50.92
     --------------------------------------------------------------------------------
+```
 
 ## Acknowledgement:
 
