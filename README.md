@@ -162,7 +162,7 @@ Performance comparison of our model BENNERD on three major biomedical entity typ
 We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. UMLS-based test set 2. Manually annotated test set. 
 
 #### Entity Linking Performances of BENNERD on UMLS-based Test Set.
-
+We show the EL performances on UMLS-based test set. We report Accuracy@n, where n = 1,10,20,30,40,50. Accuracy@1, gold candidate was ranked highest. Accuracy@{10, 20, 30, 40, 50} indicates, gold candidate was in top 10, 20, 30, 40 or in 50 predictions of the candidate ranker.
 ```
     -------------------------------------------------------------------------------------------
     Model                                            UMLS-based Test Set
