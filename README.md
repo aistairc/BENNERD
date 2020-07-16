@@ -75,7 +75,7 @@ We also show the score of NER model trained on ClinicalCovid BERT on all categor
     CELL_OR_MOLECULAR_DYSFUN     98.91         98.91        98.91       2267       2292      2292
     CTION
     CHEMICAL                     83.55         84.60        84.07      94459     113056    111650
-    <span style="color: blue"> CORONAVIRUS </span>                  98.46         98.94        98.70      21928      22271     22162
+    CORONAVIRUS                  98.46         98.94        98.70      21928      22271     22162
     DAILY_OR_RECREATIONAL_AC     97.20         98.85        98.02       1460       1502      1477
     TIVITY
     DATE                         80.24         83.79        81.98      30231      37675     36080
