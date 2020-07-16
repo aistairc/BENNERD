@@ -1,24 +1,22 @@
-## Implementation of BERT-based Exhaustive Neural Named Entity Recognition and Disambiguision (BENNERD) on COVID-19 Dataset
+# Implementation of BERT-based Exhaustive Neural Named Entity Recognition and Disambiguision (BENNERD) on COVID-19 Dataset
 
-### Backgroud
+## Backgroud
 In response to the coronavirus disease 2019 (COVID-19) pandemic, White House and a coalition of 
-research groups have released COVID-19 Open Research Dataset (CORD-19). This dataset further taken 
-into account by data mining group of University of Illinois to create a comprehensive named entity 
-annotation (CORD-NER), a distantly supervised dataset that includes 29,500 documents. 
+research groups have released COVID-19 Open Research Dataset ([CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)). This dataset further taken into account by data mining group of University of Illinois to create a comprehensive named entity 
+annotation ([CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)), a distantly supervised dataset that includes 29,500 documents. 
 
-#### Corpora Link
+### Corpora Link
 - [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)
 - [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)
  
-### BENNERD Description
-We implement BERT-based exhaustive approach, an open-source scalable and extensible system that implement 
-neural models like named entity recognition (NER) and entity disambiguision (ED) or a.k.a entity linking (EL) by addressing  distantly supervise-based CORD-NER data-set.
+## BENNERD Description
+Our [Knowledge and Information Team](https://www.airc.aist.go.jp/en/kirt/) in [AIRC](https://www.airc.aist.go.jp/en/) has implemented a BERT-based exhaustive approach, a scalable and extensible system that implement neural models like named entity recognition (NER) and entity disambiguision (ED) or a.k.a entity linking (EL) by addressing distantly supervise-based [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set.
 
 ### [BENNERD DEMO](http://prm-ezcatdb.cbrc.jp/bennerd/)
 Besides BENNERD, we also release an online text analyze system to meet real-time text annotation with visualization. 
 * [http://prm-ezcatdb.cbrc.jp/bennerd/](http://prm-ezcatdb.cbrc.jp/bennerd/)
 
-### Sample Data Format for extended CORD-NER 
+## Sample Data Format for extended CORD-NER 
     T1	GENE_OR_GENOME 0 31	Angiotensin-converting enzyme 2
     N1	Reference T1	C0960880
     T2	GENE_OR_GENOME 33 37	ACE2
@@ -41,7 +39,7 @@ Besides BENNERD, we also release an online text analyze system to meet real-time
     N10	Reference T3	C5203676
 
 
-### NER Performance using different pre-trained BERT models
+## NER Performance using different pre-trained BERT models
 
     --------------------------------------------------------------------------------------------------
           Model                   Development-set                              Test-set
@@ -55,7 +53,7 @@ Besides BENNERD, we also release an online text analyze system to meet real-time
     
     [*] https://github.com/manueltonneau/covid-berts
 
-### Categorical Performance Based on All Categories
+## Categorical Performance Based on All Categories
 
 We also show the score of NER model trained on ClinicalCovid BERT on all categories in the dataset.
 
@@ -133,11 +131,8 @@ We also show the score of NER model trained on ClinicalCovid BERT on all categor
     WILDLIFE                     98.43         97.56        97.99       1438       1461      1474
     WORK_OF_ART                  34.75         14.44        20.40         41        118       284
     ----------------------------------------------------------------------------------------------
-
-#### Details Categorical Performance
-    * https://under_construction
   
-### Performance Comparison with State-of-the-art Models on CORD-NER Dataset
+## Performance Comparison with State-of-the-art Models on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset
 
     ------------------------------------------------------------------------------------------------------
           Model                   Gene                      Chemical                     Disease
@@ -155,8 +150,8 @@ We also show the score of NER model trained on ClinicalCovid BERT on all categor
 
 - *Note: The results of SciSpacy are based on ramdomly picked 1000 sentences from CORD-NER dataset.
 
-### BENNERD Performances based on indirect comparison with State-of-the-art Models on CORD-NER Dataset
-Performance comparison of our model BENNERD on three major biomedical entity types in COVID-19 corpus. Since the manually annotated CORD-NER test-set is not publicly available therefore we can not directly compare our system performances. Instead, here we  show  the  performance  of gene, chemical, and disease based on our 4,500 test-set.
+## BENNERD Performances based on indirect comparison with State-of-the-art Models on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset
+Performance comparison of our model BENNERD on three major biomedical entity types in CORD-19 corpus. Since the manually annotated CORD-NER test set is not publicly available therefore we can not directly compare our system performances. Instead, here we  show  the  performance  of gene, chemical, and disease based on our 5,000 test set.
 
     ------------------------------------------------------------------------------------------------------
           Model                   Gene                      Chemical                     Disease
@@ -166,10 +161,10 @@ Performance comparison of our model BENNERD on three major biomedical entity typ
     BENNERD              76.07      74.8     75.45   83.55      84.60    84.07    84.85     84.9     84.92
     ------------------------------------------------------------------------------------------------------
 
-### Entity Linking Performances Test sets.
+## Entity Linking Performances Test sets.
 We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. UMLS-based test set 2. Manually annotated test set. 
 
-## Entity Linking Performances of BENNERD on our UMLS-based test set.
+### Entity Linking Performances of BENNERD on our UMLS-based test set.
 
     -------------------------------------------------------------------------------------------
     Model                                            UMLS-based Test Set
@@ -181,7 +176,7 @@ We are the first to perform entity linking (EL) task on [CORD-19](https://www.ka
     BENNERD + NER's True Positive      30.31     48.91     54.60     56.95     58.27     59.49
     -------------------------------------------------------------------------------------------
 
-## Entity Linking Performances of BENNERD on our manually annotated test set.
+### Entity Linking Performances of BENNERD on our manually annotated test set.
 
     --------------------------------------------------------------------------------
     Model                               Manually Annotated Test Set
@@ -191,7 +186,7 @@ We are the first to perform entity linking (EL) task on [CORD-19](https://www.ka
     BENNERD               24.27     42.95     47.07     48.81     50.00     50.92
     --------------------------------------------------------------------------------
 
-### Acknowledgement:
+## Acknowledgement:
 
 This work is based on results obtained from a project commissioned by the PRISM
 
