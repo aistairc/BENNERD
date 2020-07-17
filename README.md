@@ -17,7 +17,7 @@ The BENNERD system provides a [web interface](http://prm-ezcatdb.cbrc.jp/bennerd
 * [http://prm-ezcatdb.cbrc.jp/bennerd/](http://prm-ezcatdb.cbrc.jp/bennerd/)
 
 ### Sample Data Format of Extended CORD-NER 
-Examples of annotation for an entity (**T**), a normalization (**N**)  are shown in the following. Text-bound annotation identifies a specific span of text and assigns it a type. In text-bound annotation (**T1**) of a span “**Angiotensin-converting enzyme 2**”,  **0** denotes start-offset and **31** denotes end-offset of the annotation span, where type is **GENE_OR_GENOME**. The normalization annotation (**N1**) is attached to the text-bound annotation (**T1**) which is associated with the unified medical language system (UMLS) entry with the UMLS concept unique identifier (CUI) as **C0960880**. 
+Examples of annotation for an entity (**T**), a normalization (**N**) are shown in the following. Text-bound annotation identifies a specific span of text and assigns it a type. In text-bound annotation (**T1**) of a span “**Angiotensin-converting enzyme 2**”,  **0** denotes start-offset and **31** denotes end-offset of the annotation span, where type is **GENE_OR_GENOME**. The normalization annotation (**N1**) is attached to the text-bound annotation (**T1**) which is associated with the unified medical language system (UMLS) entry with the UMLS concept unique identifier (CUI) as **C0960880**. 
 ```
     T1	GENE_OR_GENOME 0 31	Angiotensin-converting enzyme 2
     N1	Reference T1	UMLS:C0960880
@@ -55,9 +55,9 @@ Named entity recognition (NER) is a task of finding entities with specific seman
     Covid BERT Base       78.31     66.80     72.10       77.44      66.80    71.73
     --------------------------------------------------------------------------------
  ```
-* [ClinicalCovid BERT:](https://github.com/manueltonneau/covid-berts) https://github.com/manueltonneau/covid-berts
-* [SciBERT:](https://github.com/allenai/scibert) https://github.com/allenai/scibert
-* [Covid BERT Base:](https://huggingface.co/deepset/covid_bert_base) https://huggingface.co/deepset/covid_bert_base
+* [ClinicalCovid BERT:](https://github.com/manueltonneau/covid-berts)
+* [SciBERT:](https://github.com/allenai/scibert)
+* [Covid BERT Base:](https://huggingface.co/deepset/covid_bert_base)
 
 ## Categorical Performances Based on All Categories
 
