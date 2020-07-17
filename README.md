@@ -55,11 +55,6 @@ Named entity recognition (NER) is a task of finding entities with specific seman
     --------------------------------------------------------------------------------
  ```
 
-   [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts)https://github.com/manueltonneau/covid-berts
-   [SciBERT](https://github.com/allenai/scibert)https://github.com/allenai/scibert
-   [Covid BERT Base](https://huggingface.co/deepset/covid_bert_base)https://huggingface.co/deepset/covid_bert_base
- 
-
 ## Categorical Performances Based on All Categories
 
 We show the categorical performances of NER model trained on ClinicalCovid BERT over the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset.
