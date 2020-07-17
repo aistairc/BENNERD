@@ -180,7 +180,7 @@ We are the first to perform entity linking (EL) task on [CORD-19](https://www.ka
 We show the EL performances on [UMLS-based test set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip). We report Accuracy@n, where n = 1, 10, 20, 30, 40, 50. Accuracy@1, gold candidate was ranked highest. Accuracy@{10, 20, 30, 40, 50} indicates, gold candidate was in top 10, 20, 30, 40 or in 50 predictions of the candidate ranker.
 ```
     -------------------------------------------------------------------------------------------
-    Model                                            [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
+    Model                                            UMLS-based Test Set
                                      ----------------------------------------------------------       
                                         A@1       A@2       A@3       A@4       A@5      A@6(%)
     -----------------------------    --------  --------  --------  --------  --------  --------
@@ -197,7 +197,7 @@ We show the EL performances on [manually annotated test set](https://github.com/
 
 ```
     ------------------------------------------------------------------------------
-    Model                               [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
+    Model                               Manually Annotated Test Set
                          ---------------------------------------------------------       
                            A@1       A@2       A@3       A@4       A@5      A@6(%)
     ------------------   -------   -------   -------   -------   -------   -------
