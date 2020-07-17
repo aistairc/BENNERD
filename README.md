@@ -1,9 +1,7 @@
-# Implementation of BERT-based Exhaustive Neural Named Entity Recognition and Disambiguision (BENNERD) on CORD-19 Dataset
+# Implementation of BERT-based Exhaustive Neural Named Entity Recognition and Disambiguision (BENNERD) on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) Corpus
 
 ## Backgroud
-In response to the coronavirus disease 2019 (COVID-19) pandemic, the White House and a coalition of 
-research groups have released COVID-19 Open Research Dataset ([CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)). This dataset has further taken into account by data mining group of University of Illinois to create a comprehensive named entity 
-annotation ([CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)), a distantly supervised dataset that includes 29,500 documents. 
+In response to the coronavirus disease 2019 (COVID-19) for global research community to apply recent advances in natural language processing (NLP), COVID-19 Open Research Dataset ([CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)) is an emerging research challenge with a resource of over 181,000 scholarly articles that are related to the infectious disease COVID-19 caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). To facilitate COVID-19 studies, since named entity recognition (NER) is considered a fundamental step in text mining system, [data mining group](http://dm1.cs.uiuc.edu) of [CS@UIUC](https://cs.illinois.edu) has created [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset with comprehensive NE annotations. The annotations are based on distant or weak supervision. The [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset includes 29,500 documents from the [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) corpus. 
 
 ### Corpora Link
 - [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)
