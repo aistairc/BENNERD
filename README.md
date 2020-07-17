@@ -158,7 +158,7 @@ Performance comparison of our model BENNERD on three major biomedical entity typ
     ----------------------------------------------------------------------------------------------
 
 ## Entity Linking
-The CORD-NER dataset gives a shed on entity recognition system, but it does not address entity linking (EL) task which is important to address COVID-19 research.  For example, the mention SARS-CoV-2 needs to be disambiguated. Since the term SARS-CoV-2 in this sentence refers to a virus, it should be linked to an entry of a virus in the knowledge base (KB), not to an entry of ‘SARS-CoV-2 vaccination’, which corresponds to therapeutic or preventive procedure to prevent a disease. To address EL, we implement ##candidate generation model## to find a list of candidate entities in the unified medical language system (UMLS) KB for linking and candidate ranking model to disambiguate the entity for concept indexing.
+The CORD-NER dataset gives a shed on entity recognition system, but it does not address entity linking (EL) task which is important to address COVID-19 research.  For example, the mention SARS-CoV-2 needs to be disambiguated. Since the term SARS-CoV-2 in this sentence refers to a virus, it should be linked to an entry of a virus in the knowledge base (KB), not to an entry of ‘SARS-CoV-2 vaccination’, which corresponds to therapeutic or preventive procedure to prevent a disease. To address EL, we implement **candidate generation model** to find a list of candidate entities in the unified medical language system (UMLS) KB for linking and **candidate ranking model** to disambiguate the entity for concept indexing.
 
 ### Entity Linking Performances on Test Sets
 We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. UMLS-based test set 2. Manually annotated test set. 
@@ -196,7 +196,7 @@ We show the EL performances on manually annotated test set.
     ------------------------------------------------------------------------------
 ```
 ## Summary
-We  presented  the  BENNERD  system  for  entity linking, hoping that we can bring insights for the COVID-19 studies on making scientific discoveries.
+We  presented  the  **BENNERD**  system  for  entity linking, hoping that we can bring insights for the COVID-19 studies on making scientific discoveries.
 
 ## Acknowledgement:
 This work is based on results obtained from a project commissioned by the Public/Private R&D Investment Strategic Expansion PrograM (PRISM)
