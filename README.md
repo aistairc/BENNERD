@@ -17,27 +17,28 @@ The BENNERD system provides a [web interface](http://prm-ezcatdb.cbrc.jp/bennerd
 * [http://prm-ezcatdb.cbrc.jp/bennerd/](http://prm-ezcatdb.cbrc.jp/bennerd/)
 
 ### Sample Data Format of Extended CORD-NER 
+Examples of annotation for an entity (**T**), a normalization (**N**)  are shown in the following. Text-bound annotation identifies a specific span of text and assigns it a type. In text-bound annotation (**T1**) of a span “**Angiotensin-converting enzyme 2**”,  **0** denotes start-offset and **31** denotes end-offset of the annotation span, where type is **GENE_OR_GENOME**. The normalization annotation (**N1**) is attached to the text-bound annotation (**T1**) which is associated with the unified medical language system (UMLS) entry with the UMLS concept unique identifier (CUI) as **C0960880**. 
 ```
     T1	GENE_OR_GENOME 0 31	Angiotensin-converting enzyme 2
-    N1	Reference T1	C0960880
+    N1	Reference T1	UMLS:C0960880
     T2	GENE_OR_GENOME 33 37	ACE2
-    N2	Reference T2	C1422064
+    N2	Reference T2	UMLS:C1422064
     T3	CORONAVIRUS 44 54	SARS-CoV-2
-    N3	Reference T3	C5203676
+    N3	Reference T3	UMLS:C5203676
     T4	CHEMICAL 55 63	receptor
-    N4	Reference T4	C0597357
+    N4	Reference T4	UMLS:C0597357
     T5	CORONAVIRUS 120 130	SARS-CoV-2
-    N5	Reference T3	C5203676
+    N5	Reference T3	UMLS:C5203676
     T6	EVOLUTION 158 170	phylogenetic
-    N6	Reference T6	cui_less
+    N6	Reference T6	UMLS:cui_less
     T7	WILDLIFE 195 198	bat
-    N7	Reference T7	C1412726
+    N7	Reference T7	UMLS:C1412726
     T8	CORONAVIRUS 214 224	SARS-CoV-2
-    N8	Reference T3	C5203676
+    N8	Reference T3	UMLS:C5203676
     T9	NORP 259 277	intermediate hosts
-    N9	Reference T9	cui_less
+    N9	Reference T9	UMLS:cui_less
     T10	CORONAVIRUS 282 292	SARS-CoV-2
-    N10	Reference T3	C5203676
+    N10	Reference T3	UMLS:C5203676
 ```
 ## Neural Named Entity Recognition
 Named entity recognition (NER) is a task of finding entities with specific semantic types such as Protein, Cell, and RNA in text. We build neural NER model, based on the [BERT](https://www.aclweb.org/anthology/N19-1423.pdf) model. The layer receives subword sequences and assigns contextual representations to the subwords via BERT. We generate mention candidates based on the same idea as the [span-based model](https://www.aclweb.org/anthology/D18-1309.pdf).
@@ -163,8 +164,8 @@ The CORD-NER dataset gives a shed on entity recognition system, but it does not 
 We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. UMLS-based test set 2. Manually annotated test set. 
 
 #### UMLS-based Test Set
-CORD-NER  dataset  comprises  only  NER  task. To solve the EL task, we expand this dataset by leveraging a concept unique identifier (CUI) for each mention in the CORD-NER dataset. We use the most recent 
-[UMLS version 2020AA release](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) that includes coronavirus-related concepts. To create a dataset for EL, we use a dictionary matching approach based on exact match using UMLS knowledge base (KB). CORD-NER includes 10,470,248 mentions, among which 6,794,126 and 3,676,122 mentions are respectively present and absent in the UMLS. Therefore, the entity coverage ratio of CORD-NER over the UMLS is 64.89%. We annotate the entity mentions that are not found in the UMLS with CUI_LESS. Finally we augment the CORD-NER dataset with CUI for each correspondence mention. To evaluate the EL performance on CORD-NER, 302,166 mentions are assigned for 5,000 test set. We call this UMLS-based test set.
+CORD-NER  dataset  comprises  only  NER  task. To solve the EL task, we expand this dataset by leveraging a CUI for each mention in the CORD-NER dataset. We use the most recent 
+[UMLS version 2020AA release](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) that includes coronavirus-related concepts. To create a dataset for EL, we use a dictionary matching approach based on exact match using UMLS KB. CORD-NER includes 10,470,248 mentions, among which 6,794,126 and 3,676,122 mentions are respectively present and absent in the UMLS. Therefore, the entity coverage ratio of CORD-NER over the UMLS is 64.89%. We annotate the entity mentions that are not found in the UMLS with CUI_LESS. Finally we augment the CORD-NER dataset with CUI for each correspondence mention. To evaluate the EL performance on CORD-NER, 302,166 mentions are assigned for 5,000 test set. We call this UMLS-based test set.
 
 #### Entity Linking Performances of BENNERD on UMLS-based Test Set
 We show the EL performances on UMLS-based test set. We report Accuracy@n, where n = 1, 10, 20, 30, 40, 50. Accuracy@1, gold candidate was ranked highest. Accuracy@{10, 20, 30, 40, 50} indicates, gold candidate was in top 10, 20, 30, 40 or in 50 predictions of the candidate ranker.
