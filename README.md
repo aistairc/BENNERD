@@ -42,7 +42,7 @@ Examples of annotation for an entity (**T**), a normalization (**N**) are shown 
 ```
 
 #### Test Sets
-We release the UMLS-based and Manually Annotaed test sets and are available from the following links.
+We release the UMLS-based and manually annotaed test sets and are available from the following links.
 * [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
 * [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
 
