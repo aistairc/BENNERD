@@ -40,7 +40,8 @@ The BENNERD system provides a [web interface](http://prm-ezcatdb.cbrc.jp/bennerd
     N10	Reference T3	C5203676
 ```
 ## Neural Named Entity Recognition
-TODO
+Named entity recognition (NER) is a task of finding entities with specific semantic types such as Protein, Cell, and RNA in text. We build neural NER model, based on the [BERT](https://www.aclweb.org/anthology/N19-1423.pdf) model. The layer receives subword sequences and assigns contextual representations to the subwords via BERT. We generate mention candidates based on the same idea as the [span-based model](https://www.aclweb.org/anthology/D18-1309.pdf).
+
 ### NER Performances using Different Pre-trained BERT Models
 ```
     --------------------------------------------------------------------------------
@@ -157,6 +158,7 @@ Performance comparison of our model BENNERD on three major biomedical entity typ
     ----------------------------------------------------------------------------------------------
 
 ## Entity Linking
+The CORD-NER dataset gives a shed on entity recognition system, but it does not address entity linking (EL) task which is important to address COVID-19 research.  For example, the mention SARS-CoV-2 needs to be disambiguated. Since the term SARS-CoV-2 in this sentence refers to a virus, it should be linked to an entry of a virus in the knowledge base (KB), not to an entry of ‘SARS-CoV-2 vaccination’, which corresponds to therapeutic or preventive procedure to prevent a disease. To address EL, we implement ##candidate generation model## to find a list of candidate entities in the unified medical language system (UMLS) KB for linking and candidate ranking model to disambiguate the entity for concept indexing.
 
 ### Entity Linking Performances on Test Sets
 We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. UMLS-based test set 2. Manually annotated test set. 
@@ -194,7 +196,7 @@ We show the EL performances on manually annotated test set.
     ------------------------------------------------------------------------------
 ```
 ## Summary
-ToDO
+We  presented  the  BENNERD  system  for  entity linking, hoping that we can bring insights for the COVID-19 studies on making scientific discoveries.
 
 ## Acknowledgement:
 This work is based on results obtained from a project commissioned by the Public/Private R&D Investment Strategic Expansion PrograM (PRISM)
