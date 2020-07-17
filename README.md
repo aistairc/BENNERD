@@ -156,12 +156,16 @@ Performance comparison of our model BENNERD on three major biomedical entity typ
     BENNERD             76.07     74.8   75.45    83.55     84.60  84.07    84.85     84.9   84.92
     ----------------------------------------------------------------------------------------------
 
-## Entity Linking With BENNERD System
+## Entity Linking
 
-### Entity Linking Performances on Test Sets.
+### Entity Linking Performances on Test Sets
 We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. UMLS-based test set 2. Manually annotated test set. 
 
-#### Entity Linking Performances of BENNERD on UMLS-based Test Set.
+#### UMLS-based Test Set
+CORD-NER  dataset  comprises  only  NER  task. To solve the EL task, we expand this dataset by leveraging a concept unique identifier (CUI) for each mention in the CORD-NER dataset. We use the most recent 
+[UMLS version 2020AA release](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) that includes coronavirus-related concepts. To create a dataset for EL, we use a dictionary matching approach based on exact match using UMLS knowledge base (KB). CORD-NER includes 10,470,248 mentions, among which 6,794,126 and 3,676,122 mentions are respectively present and absent in the UMLS. Therefore, the entity coverage ratio of CORD-NER over the UMLS is 64.89%. We annotate the entity mentions that are not found in the UMLS with CUI_LESS. Finally we augment the CORD-NER dataset with CUI for each correspondence mention. To evaluate the EL performance on CORD-NER, 302,166 mentions are assigned for 5,000 test set. We call this UMLS-based test set.
+
+#### Entity Linking Performances of BENNERD on UMLS-based Test Set
 We show the EL performances on UMLS-based test set. We report Accuracy@n, where n = 1, 10, 20, 30, 40, 50. Accuracy@1, gold candidate was ranked highest. Accuracy@{10, 20, 30, 40, 50} indicates, gold candidate was in top 10, 20, 30, 40 or in 50 predictions of the candidate ranker.
 ```
     -------------------------------------------------------------------------------------------
@@ -174,9 +178,10 @@ We show the EL performances on UMLS-based test set. We report Accuracy@n, where 
     BENNERD + NER's True Positive      30.31     48.91     54.60     56.95     58.27     59.49
     -------------------------------------------------------------------------------------------
 ```
+#### Manually Annotated Test Set
+In addition with UMLS-based test set, we assigned a biologist to annotate 1,000 random sentences based on chemical, disease, and gene types along with its corresponding CUI to create a manually annotated test set. 
 
-#### Entity Linking Performances of BENNERD on Manually Annotated Test Set.
-
+#### Entity Linking Performances of BENNERD on Manually Annotated Test Set
 We show the EL performances on manually annotated test set.
 
 ```
@@ -188,9 +193,10 @@ We show the EL performances on manually annotated test set.
     BENNERD               24.27     42.95     47.07     48.81     50.00     50.92
     ------------------------------------------------------------------------------
 ```
+## Summary
+ToDO
 
 ## Acknowledgement:
-
 This work is based on results obtained from a project commissioned by the Public/Private R&D Investment Strategic Expansion PrograM (PRISM)
 
 
