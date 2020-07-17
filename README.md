@@ -59,9 +59,9 @@ Named entity recognition (NER) is a task of finding entities with specific seman
     Covid BERT Base       78.31     66.80     72.10       77.44      66.80    71.73
     --------------------------------------------------------------------------------
  ```
-* [ClinicalCovid BERT:](https://github.com/manueltonneau/covid-berts)
-* [SciBERT:](https://github.com/allenai/scibert)
-* [Covid BERT Base:](https://huggingface.co/deepset/covid_bert_base)
+* [ClinicalCovid BERT:](https://github.com/manueltonneau/covid-berts) is a BERT model trained on scientific corpora, namely [ClinicalBERT](https://github.com/EmilyAlsentzer/clinicalBERT) and [BioBERT](https://github.com/dmis-lab/biobert).
+* [SciBERT:](https://github.com/allenai/scibert) is trained on papers from the corpus of [semanticscholar.org](https://www.semanticscholar.org).
+* [Covid BERT Base](https://huggingface.co/deepset/covid_bert_base) is based on fine-tuned a BERT base model on the [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) corpus. 
 
 ### Categorical Performances Based on All Categories
 
