@@ -39,7 +39,7 @@ Examples of annotation for an entity (**T**), a normalization (**N**) are shown 
     N10	Reference T3	UMLS:C5203676
 ```
 
-#### Test Sets
+#### Test Sets Link
 We release the UMLS-based and manually annotaed test sets and are available from the following links.
 * [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
 * [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
