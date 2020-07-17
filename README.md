@@ -40,6 +40,12 @@ Examples of annotation for an entity (**T**), a normalization (**N**) are shown 
     T10	CORONAVIRUS 282 292	SARS-CoV-2
     N10	Reference T3	UMLS:C5203676
 ```
+
+#### Test Sets
+We release the UMLS-based and Manually Annotaed test sets and are available from the following links.
+* [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
+* [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
+
 ## Neural Named Entity Recognition
 Named entity recognition (NER) is a task of finding entities with specific semantic types such as Protein, Cell, and RNA in text. We build neural NER model, based on the [BERT](https://www.aclweb.org/anthology/N19-1423.pdf) model. The layer receives subword sequences and assigns contextual representations to the subwords via BERT. We generate mention candidates based on the same idea as the [span-based model](https://www.aclweb.org/anthology/D18-1309.pdf).
 
@@ -164,17 +170,17 @@ Performance comparison of our model BENNERD on three major biomedical entity typ
 The [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset gives a shed on entity recognition system, but it does not address entity linking (EL) task which is important to address COVID-19 research.  For example, the mention SARS-CoV-2 needs to be disambiguated. Since the term SARS-CoV-2 in this sentence refers to a virus, it should be linked to an entry of a virus in the knowledge base (KB), not to an entry of ‘SARS-CoV-2 vaccination’, which corresponds to therapeutic or preventive procedure to prevent a disease. To address EL, we implement **candidate generation model** to find a list of candidate entities in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) KB for linking and **candidate ranking model** to disambiguate the entity for concept indexing.
 
 ### Entity Linking Performances on Test Sets
-We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. UMLS-based test set 2. Manually annotated test set. 
+We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip) 2. [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip). 
 
-#### UMLS-based Test Set
+#### [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
 [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)  dataset  comprises  only  NER  task. To solve the EL task, we expand this dataset by leveraging a CUI for each mention in the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset. We use the most recent 
 [UMLS version 2020AA release](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) that includes coronavirus-related concepts. To create a dataset for EL, we use a dictionary matching approach based on exact match using UMLS KB. [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) includes 10,470,248 mentions, among which 6,794,126 and 3,676,122 mentions are respectively present and absent in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html). Therefore, the entity coverage ratio of [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) over the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) is 64.89%. We annotate the entity mentions that are not found in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) with CUI_LESS. Finally we augment the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset with CUI for each correspondence mention. To evaluate the EL performance on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x), 302,166 mentions are assigned for 5,000 test set. We call this UMLS-based test set.
 
-#### Entity Linking Performances of BENNERD on UMLS-based Test Set
-We show the EL performances on UMLS-based test set. We report Accuracy@n, where n = 1, 10, 20, 30, 40, 50. Accuracy@1, gold candidate was ranked highest. Accuracy@{10, 20, 30, 40, 50} indicates, gold candidate was in top 10, 20, 30, 40 or in 50 predictions of the candidate ranker.
+#### Entity Linking Performances of BENNERD on [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
+We show the EL performances on [UMLS-based test set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip). We report Accuracy@n, where n = 1, 10, 20, 30, 40, 50. Accuracy@1, gold candidate was ranked highest. Accuracy@{10, 20, 30, 40, 50} indicates, gold candidate was in top 10, 20, 30, 40 or in 50 predictions of the candidate ranker.
 ```
     -------------------------------------------------------------------------------------------
-    Model                                            UMLS-based Test Set
+    Model                                            [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
                                      ----------------------------------------------------------       
                                         A@1       A@2       A@3       A@4       A@5      A@6(%)
     -----------------------------    --------  --------  --------  --------  --------  --------
@@ -183,15 +189,15 @@ We show the EL performances on UMLS-based test set. We report Accuracy@n, where 
     BENNERD + NER's True Positive      30.31     48.91     54.60     56.95     58.27     59.49
     -------------------------------------------------------------------------------------------
 ```
-#### Manually Annotated Test Set
-In addition with UMLS-based test set, we assigned a biologist to annotate 1,000 random sentences based on chemical, disease, and gene types along with its corresponding CUI to create a manually annotated test set. 
+#### [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
+In addition with UMLS-based test set, we assigned a biologist to annotate 1,000 random sentences based on chemical, disease, and gene types along with its corresponding CUI to create a [manually annotated test set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip). 
 
-#### Entity Linking Performances of BENNERD on Manually Annotated Test Set
-We show the EL performances on manually annotated test set.
+#### Entity Linking Performances of BENNERD on [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
+We show the EL performances on [manually annotated test set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip).
 
 ```
     ------------------------------------------------------------------------------
-    Model                               Manually Annotated Test Set
+    Model                               [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
                          ---------------------------------------------------------       
                            A@1       A@2       A@3       A@4       A@5      A@6(%)
     ------------------   -------   -------   -------   -------   -------   -------
