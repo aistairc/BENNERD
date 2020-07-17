@@ -53,10 +53,12 @@ Named entity recognition (NER) is a task of finding entities with specific seman
     SciBERT               84.03     87.05     85.51       82.16      83.81    82.98
     Covid BERT Base       78.31     66.80     72.10       77.44      66.80    71.73
     --------------------------------------------------------------------------------
- ```   
-    - [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts)https://github.com/manueltonneau/covid-berts
-    - [SciBERT](https://github.com/allenai/scibert)https://github.com/allenai/scibert
-    - [Covid BERT Base](https://huggingface.co/deepset/covid_bert_base)https://huggingface.co/deepset/covid_bert_base
+ ```
+
+   [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts)https://github.com/manueltonneau/covid-berts
+   [SciBERT](https://github.com/allenai/scibert)https://github.com/allenai/scibert
+   [Covid BERT Base](https://huggingface.co/deepset/covid_bert_base)https://huggingface.co/deepset/covid_bert_base
+ 
 
 ## Categorical Performances Based on All Categories
 
