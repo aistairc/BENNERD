@@ -52,9 +52,13 @@ It is worth to mention that both [UMLS-based Test Set](https://github.com/aistai
 ## Neural Named Entity Recognition
 Named entity recognition (NER) is a task of finding entities with specific semantic types such as Protein, Cell, and RNA in text. We build neural NER model, based on the [BERT](https://www.aclweb.org/anthology/N19-1423.pdf) model. The layer receives subword sequences and assigns contextual representations to the subwords via BERT. We generate mention candidates based on the same idea as the [span-based model](https://www.aclweb.org/anthology/D18-1309.pdf).
 
-### NER Performances using Different Pre-trained BERT Models
+### BENNERD NER Performances using Different Pre-trained BERT Models
+
+Since our NER model is mainly based on BERT architecture and there are dozen of pre-trained BERT models on different corpora, we tested the performance of BENNERD NER on some of the well-known pre-trained BERT models for the biomedical domain. We also applied the same training setting to make sure that the results are comparable.
+
 ```
     --------------------------------------------------------------------------------
+     Pre-trained BERT
           Model                Development-set                      Test-set
                         ----------------------------    ----------------------------       
                         Precision   Recall    F1(%)     Precision   Recall    F1(%)
@@ -156,6 +160,8 @@ We show the categorical performances of NER model trained on [ClinicalCovid BERT
     CORD-NER System    82.14    74.68   72.23    82.93    75.22   78.89     75.73   68.42   71.89
     ---------------------------------------------------------------------------------------------
 
+- [SciSpacy (BIONLP13CG)](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.5/en_ner_bionlp13cg_md-0.2.5.tar.gz) is a [SciSpacy](https://allenai.github.io/scispacy/) NER model trained on the BIONLP13CG corpus.
+- [SciSpacy (BC5CDR)](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.5/en_ner_bc5cdr_md-0.2.5.tar.gz) is a [SciSpacy](https://allenai.github.io/scispacy/) NER model trained on the BC5CDR corpus.
 - *Note: The results of SciSpacy are based on randomly picked 1000 sentences from [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset.
 
 ### BENNERD Performances based on Indirect comparison with State-of-the-art Models on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset
