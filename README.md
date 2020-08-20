@@ -14,10 +14,10 @@ In response to the coronavirus disease 2019 (COVID-19) for global research commu
 - [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)
  
 # BENNERD Description
-In this work, we present a BERT-based Exhaustive Neural Named Entity Recognition and Disambiguation (BENNERD) system by addressing [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set. The entity disambiguation (ED) or entity normalization (EN) is a.k.a entity linking (EL) task. The objective of this work is to facilitate recent pandemic of corona virus disease 2019 (COVID-19) research that mainly covers biomedical domain, especially new entity types (e.g., coronavirus, viral proteins, immune responses) by addressing [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset. The BENNERD system is composed of four models: **NER** that enumerates [exhaustively](https://www.aclweb.org/anthology/D18-1309.pdf) all possible spans as potential entity mentions and classifies them into entity types, masked language model as **BERT**, **candidate generation model** to find a list of candidate entities, and **candidate ranking model** to disambiguate the entity for concept indexing. 
+In this work, we present a BERT-based Exhaustive Neural Named Entity Recognition and Disambiguation (BENNERD) system by addressing [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set. The entity disambiguation (ED) or entity normalization (EN) is a.k.a entity linking (EL) task. The objective of this work is to facilitate recent pandemic of corona virus disease 2019 (COVID-19) research that mainly covers **biomedical domain**, especially new entity types (e.g., coronavirus, viral proteins, immune responses) by addressing [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset. In contrast to biomedical domain, it also gives a shed on **general domain** entity types (e.g., person, organization, location, date, group etc.). Moreover, along with **flat** or non-overlapping, the BENNERD system also solves **nested** or overlapping entities. The BENNERD system is composed of four models: **NER** that enumerates [exhaustively](https://www.aclweb.org/anthology/D18-1309.pdf) all possible spans as potential entity mentions and classifies them into entity types, masked language model as **BERT**, **candidate generation model** to find a list of candidate entities, and **candidate ranking model** to disambiguate the entity for concept indexing. 
 
 # [BENNERD DEMO](http://prm-ezcatdb.cbrc.jp/bennerd/)
-The BENNERD system provides a [web interface](http://prm-ezcatdb.cbrc.jp/bennerd/) to facilitate the process of text annotation and its disambiguation without any training for end users. In our demo, users can input a plain text of any biomedical document to extract entities with their corresponding types and UMLS CUI(s) in BRAT format. It also provides a feature to filter out some of the specific entities by their types via a simple checkbox list (the setting button on the top right of page).
+The BENNERD system provides a [web interface](http://prm-ezcatdb.cbrc.jp/bennerd/) to facilitate the process of text annotation and its disambiguation without any training for end users like researchers or biologists. In our demo, users can input a plain text of any biomedical document to extract entities with their corresponding types and UMLS CUI(s) in BRAT format. It also provides a feature to filter out some of the specific entities by their types via a simple checkbox list (the setting button on the top right of page).
 
 Users can access our demo via [http://prm-ezcatdb.cbrc.jp/bennerd/](http://prm-ezcatdb.cbrc.jp/bennerd/).
 
@@ -75,8 +75,8 @@ Since our NER model is mainly based on BERT architecture and there are numerious
 [Covid BERT Base](https://huggingface.co/deepset/covid_bert_base). In development- and test-sets, we obtain the best performances **85.52%** and **83.03%** respectively in terms of F1-score using [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts).
 ```
     --------------------------------------------------------------------------------
-     Pre-trained BERT
-          Model                Development-set                      Test-set
+    | Pre-trained BERT
+          Model         |       Development-set     |                 Test-set     |
                         ----------------------------    ----------------------------       
                         Precision   Recall    F1(%)     Precision   Recall    F1(%)
     ------------------  ---------   ------  --------    ---------   ------  --------
@@ -208,7 +208,7 @@ We show the EL performances on [UMLS-based test set](https://github.com/aistairc
     -------------------------------------------------------------------------------------------
     Model                                            UMLS-based Test Set
                                      ----------------------------------------------------------       
-                                        A@1       A@2       A@3       A@4       A@5      A@6(%)
+                                        A@1      A@10       A@20     A@30       A@40      A@50(%)
     -----------------------------    --------  --------  --------  --------  --------  --------
     BENNERD + NER's Prediction         27.61     44.56     49.74     51.88     53.08     54.19
     BENNERD + NER's Gold               29.78     48.33     53.89     56.22     57.53     58.74
@@ -225,13 +225,13 @@ We show the EL performances on [manually annotated test set](https://github.com/
     ------------------------------------------------------------------------------
     Model                               Manually Annotated Test Set
                          ---------------------------------------------------------       
-                           A@1       A@2       A@3       A@4       A@5      A@6(%)
+                           A@1       A@10      A@20      A@30      A@40     A@50(%)
     ------------------   -------   -------   -------   -------   -------   -------
     BENNERD               24.27     42.95     47.07     48.81     50.00     50.92
     ------------------------------------------------------------------------------
 ```
 # Summary
-We  presented  the  **BENNERD**  system  for  entity linking, hoping that we can bring insights for the COVID-19 studies on making scientific discoveries.
+We presented the **BENNERD** system for entity linking, hoping that we can bring insights for the COVID-19 studies on making scientific discoveries. The BENNERD system is continually evolving; we will continue to improve the system as well as to implement new functions such as relation extraction to further facilitate COVID-19 research.
 
 # Acknowledgement
 This work is based on results obtained from a project commissioned by the Public/Private R&D Investment Strategic Expansion PrograM (PRISM)
