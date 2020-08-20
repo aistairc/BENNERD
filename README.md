@@ -233,8 +233,16 @@ We show the EL performances on [manually annotated test set](https://github.com/
 # Summary
 We  presented  the  **BENNERD**  system  for  entity linking, hoping that we can bring insights for the COVID-19 studies on making scientific discoveries.
 
-# Acknowledgement:
+# Acknowledgement
 This work is based on results obtained from a project commissioned by the Public/Private R&D Investment Strategic Expansion PrograM (PRISM)
 
+# Contact
+* [Mohammad Golam Sohrab](https://orcid.org/0000-0001-5540-7834): sohrab.mohammad@aist.go.jp
+* Khoa N. A. Duong: khoa.duong@aist.go.jp
+* [Makoto Miwa](https://scholar.google.com/citations?user=lhpx2fkAAAAJ&hl=en): makoto-miwad@toyota-ti.ac.jp
+* Goran Topi'c: goran.topic@aist.go.jp
+* Masami Ikeda: ikeda-masami@aist.go.jp
+* [Hiroya Takamura](https://scholar.google.com/citations?user=o57RFqgAAAAJ&hl=en): takamura.hiroya@aist.go.jp
 
-
+# Citation
+If you find this work by using this implementation, please cite this paper (Under Review). Thanks!!!
