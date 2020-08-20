@@ -75,14 +75,6 @@ Since our NER model is mainly based on BERT architecture and there are numerious
 [Covid BERT Base](https://huggingface.co/deepset/covid_bert_base). In development- and test-sets, we obtain the best performances **85.52%** and **83.03%** respectively in terms of F1-score using [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts).
 
 ```
-
-| Pre-trained BERT Model | Development-set| Test-set |
-| ---------------------- | ---------------| -------- |
-| Pre-trained BERT Model | Development-set| Test-set |
-| Pre-trained BERT Model | Development-set| Test-set |
-```
-
-```
     --------------------------------------------------------------------------------
      Pre-trained BERT
           Model                Development-set                      Test-set     
