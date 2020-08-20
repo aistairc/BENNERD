@@ -246,4 +246,4 @@ This work is based on results obtained from a project commissioned by the Public
 * [Hiroya Takamura](https://scholar.google.com/citations?user=o57RFqgAAAAJ&hl=en): takamura.hiroya@aist.go.jp
 
 # Citation
-If you find this work by using this implementation, please cite this [paper](under review) (Under Review). Thanks!!!
+If you find this work useful by using this implementation, please cite this [paper](under review) (Under Review). Thanks!!!
