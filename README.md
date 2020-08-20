@@ -239,7 +239,7 @@ This work is based on results obtained from a project commissioned by the Public
 # Contact
 * [Mohammad Golam Sohrab](https://orcid.org/0000-0001-5540-7834): sohrab.mohammad@aist.go.jp
 * Khoa N. A. Duong: khoa.duong@aist.go.jp
-* [Makoto Miwa](https://scholar.google.com/citations?user=lhpx2fkAAAAJ&hl=en): makoto-miwad@toyota-ti.ac.jp
+* [Makoto Miwa](https://scholar.google.com/citations?user=lhpx2fkAAAAJ&hl=en): makoto-miwa@toyota-ti.ac.jp
 * Goran Topi'c: goran.topic@aist.go.jp
 * Masami Ikeda: ikeda-masami@aist.go.jp
 * [Hiroya Takamura](https://scholar.google.com/citations?user=o57RFqgAAAAJ&hl=en): takamura.hiroya@aist.go.jp
