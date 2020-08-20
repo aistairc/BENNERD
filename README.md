@@ -58,7 +58,7 @@ It is worth to mention that both [UMLS-based Test Set](https://github.com/aistai
 # BENNERD System
 BENNERD system mainly comprises two platforms: [BENNERD web interface](http://prm-ezcatdb.cbrc.jp/bennerd/) and BENNERD back-end server. The overall workflow of the BENNERD system is illustrated as below.
 
-![Demo interface](images/BENNERD_WORK_FLOW.pdf)
+![Work Flow](images/BENNERD_WORK_FLOW.pdf)
 
 ## [BENNERD web interface](http://prm-ezcatdb.cbrc.jp/bennerd/)
 In [BENNERD web interface](http://prm-ezcatdb.cbrc.jp/bennerd/), the user interface contains input panel, load a sample tab, annotation tab, gear box tab, and .TXT and .ANN tabs. For a given text from users or loading a sample text from a sample list, the annotation tab will show the annotations with the text based on best NER- and EL-based training model. Different colors represent different entity types and, when the cursor floats over a coloured box representing an entity above text, the corresponding concept unique identifier (CUI) on the UMLS is shown. Users can save the machine readable text and annotation files as .txt and .ann where the .ann annotation file provides standoff annotation output in [brat](https://brat.nlplab.org) format.
@@ -71,8 +71,8 @@ Named entity recognition (NER) is a task of finding entities with specific seman
 
 #### BENNERD NER Performances using Different Pre-trained BERT Models
 
-Since our NER model is mainly based on BERT architecture and there are dozen of pre-trained BERT models on different corpora, we tested the performance of BENNERD NER on some of the well-known pre-trained BERT models for the biomedical domain. We also applied the same training setting to make sure that the results are comparable.
-
+Since our NER model is mainly based on BERT architecture and there are numerious pre-trained BERT models on different corpora, we tested the performance of BENNERD NER on some of the well-known pre-trained BERT models for the biomedical domain. We also applied the same training setting to make sure that the results are comparable. We judge the NER performnces of BENNERD on development- and test-sets using [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts), [SciBERT](https://github.com/allenai/scibert), and 
+[Covid BERT Base](https://huggingface.co/deepset/covid_bert_base). In development- and test-sets, we obtain the best performances **85.52%** and **83.03%** respectively in terms of F1-score using [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts).
 ```
     --------------------------------------------------------------------------------
      Pre-trained BERT
@@ -91,7 +91,7 @@ Since our NER model is mainly based on BERT architecture and there are dozen of 
 
 #### Categorical Performances Based on All Categories
 
-We show the categorical performances of NER model trained on [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts) over the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset.
+We show the categorical performances of NER model trained on [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts) over the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset. Along with categorical performances on precision, recall, and F1-score, we also show the numbers of **#TPs** can be denoted as number of true positive outcomes where the model correctly preditcs the positive category, **#Preds** as number of predicted entities, and **#Golds** as number of gold entites of each category.
 
     ----------------------------------------------------------------------------------------------
     Label                               Precision   Recall   F1-score(%)   #TPs    #Preds   #Golds
