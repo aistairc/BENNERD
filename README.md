@@ -1,9 +1,9 @@
 # Implementation of BERT-based Exhaustive Neural Named Entity Recognition and Disambiguation (BENNERD) on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) Corpus
 
 ## Overview
-On this page, we present our recent research related to the coronavirus disease in 2019.
+On this page, we present our recent research related to the coronavirus disease 2019.
 Our main objective of this work is to propose a biomedical entity linking system and then provide a web interface for end-users to facilitate and accelerate COVID-19 studies.
-The results of our method also reported on this page and compared to several previous works.
+The results of our method are also reported on this page and compared to several previous works.
 We also release our manually annotated test- and UMLS-based test sets that are used in this research as part of our effort to support the community in studying the coronavirus disease.
 
 ## Background
