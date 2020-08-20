@@ -60,7 +60,7 @@ BENNERD system mainly comprises two platforms: [BENNERD web interface](http://pr
 
 ![Work Flow](images/BENNERD_WORK_FLOW-1.png)
 
-## [BENNERD web interface](http://prm-ezcatdb.cbrc.jp/bennerd/)
+## [BENNERD Web Interface](http://prm-ezcatdb.cbrc.jp/bennerd/)
 In [BENNERD web interface](http://prm-ezcatdb.cbrc.jp/bennerd/), the user interface contains input panel, load a sample tab, annotation tab, gear box tab, and .TXT and .ANN tabs. For a given text from users or loading a sample text from a sample list, the annotation tab will show the annotations with the text based on best NER- and EL-based training model. Different colors represent different entity types and, when the cursor floats over a coloured box representing an entity above text, the corresponding concept unique identifier (CUI) on the UMLS is shown. Users can save the machine readable text and annotation files as .txt and .ann where the .ann annotation file provides standoff annotation output in [brat](https://brat.nlplab.org) format.
 
 ## BENNERD Back-end
@@ -245,4 +245,4 @@ This work is based on results obtained from a project commissioned by the Public
 * [Hiroya Takamura](https://scholar.google.com/citations?user=o57RFqgAAAAJ&hl=en): takamura.hiroya@aist.go.jp
 
 # Citation
-If you find this work by using this implementation, please cite this paper (Under Review). Thanks!!!
+If you find this work by using this implementation, please cite this [paper](under review) (Under Review). Thanks!!!
