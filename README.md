@@ -73,10 +73,12 @@ Named entity recognition (NER) is a task of finding entities with specific seman
 
 Since our NER model is mainly based on BERT architecture and there are numerious pre-trained BERT models on different corpora, we tested the performance of BENNERD NER on some of the well-known pre-trained BERT models for the biomedical domain. We also applied the same training setting to make sure that the results are comparable. We judge the NER performnces of BENNERD on development- and test-sets using [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts), [SciBERT](https://github.com/allenai/scibert), and 
 [Covid BERT Base](https://huggingface.co/deepset/covid_bert_base). In development- and test-sets, we obtain the best performances **85.52%** and **83.03%** respectively in terms of F1-score using [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts).
+
 ```
 | Pre-trained BERT Model | Development-set| Test-set |
 | ---------------------- | ---------------| -------- |
 ```
+
 ```
     --------------------------------------------------------------------------------
      Pre-trained BERT
