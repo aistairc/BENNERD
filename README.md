@@ -1,4 +1,4 @@
-# Implementation of **B**ERT-based **E**xhaustive **N**eural **N**amed **E**ntity **R**ecognition and **D**isambiguation (**BENNERD**)
+# **BENNERD**: Implementation of **B**ERT-based **E**xhaustive **N**eural **N**amed **E**ntity **R**ecognition and **D**isambiguation
 
 # Overview
 On this page, we present our recent research related to the coronavirus disease in 2019.
