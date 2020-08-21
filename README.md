@@ -232,7 +232,7 @@ We show the EL performances on [manually annotated test set](https://github.com/
     ------------------------------------------------------------------------------
 ```
 # Summary
-We presented the **BENNERD** system for entity linking, hoping that we can bring insights for the COVID-19 studies on making scientific discoveries. The BENNERD system is continually evolving; we will continue to improve the system as well as to implement new functions such as relation extraction to further facilitate COVID-19 research.
+We presented the **BENNERD** system for entity linking, hoping that we can bring insights for the COVID-19 studies on making scientific discoveries. The **BENNERD** system is continually evolving; we will continue to improve the system as well as to implement new functions such as relation extraction to further facilitate COVID-19 research.
 
 # Acknowledgement
 This work is based on results obtained from a project commissioned by the Public/Private R&D Investment Strategic Expansion PrograM (PRISM)
