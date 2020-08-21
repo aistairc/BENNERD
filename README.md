@@ -5,7 +5,7 @@ We present our recent efforts related to the coronavirus disease in 2019.
 Our main objective is to provide our recent biomedical entity linking system for end-users to facilitate and accelerate COVID-19 studies.
 We provide an **[web interface](#bennerd-demo)** so that end-users can easily analyze their texts with our system. 
 The **[evaluation](#evaluation)** of our method are also reported on this page with comparing with several existing state-of-the-art systems.
-We also release our **[manually annotated test- and UMLS-based test sets](#test-sets)** that are used to evaluate our system to support the NLP community in developing the natural language processing (NLP) systems for the coronavirus disease.
+We also release our manually annotated test- and UMLS-based **[test sets](#test-sets)** that are used to evaluate our system to support the NLP community in developing the natural language processing (NLP) systems for the coronavirus disease.
 
 # Background
 In response to the coronavirus disease 2019 (COVID-19) for global research community to apply recent advances in NLP, COVID-19 Open Research Dataset ([CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)) is proposed as a research challenge. The dataset consists of a resource of over 181,000 scholarly articles that are related to the infectious disease COVID-19 caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). To facilitate COVID-19 studies, since named entity recognition (NER) is considered a fundamental step in text mining system, [data mining group](http://dm1.cs.uiuc.edu) of [CS@UIUC](https://cs.illinois.edu) has created [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset with comprehensive NE annotations. The annotations are based on distant or weak supervision. The [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset includes 29,500 documents from the [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) corpus. 
@@ -19,6 +19,14 @@ The BENNERD system provides a [web interface](http://prm-ezcatdb.cbrc.jp/bennerd
 Users can access our demo via [http://prm-ezcatdb.cbrc.jp/bennerd/](http://prm-ezcatdb.cbrc.jp/bennerd/).
 
 ![Demo interface](images/demo-screenshot.png)
+
+# Test Sets
+
+We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets. These data sets are available from the following links. 
+* [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
+* [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
+
+It is worth to mention that both [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip) and [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip) are based on the orginal offsets of [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset.
 
 ## Sample Data Format of Extended CORD-NER 
 Examples of annotation for an entity (**T**), a normalization (**N**) are shown in the following. Text-bound annotation identifies a specific span of text and assigns it a type. In text-bound annotation (**T1**) of a span “**Angiotensin-converting enzyme 2**”,  **0** denotes start-offset and **31** denotes end-offset of the annotation span, where type is **GENE_OR_GENOME**. The normalization annotation (**N1**) is attached to the text-bound annotation (**T1**) which is associated with the unified medical language system ([UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html)) entry with the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) concept unique identifier (CUI) as **C0960880**. 
@@ -44,13 +52,6 @@ Examples of annotation for an entity (**T**), a normalization (**N**) are shown 
     T10	CORONAVIRUS 282 292	SARS-CoV-2
     N10	Reference T3	UMLS:C5203676
 ```
-# Test Sets
-
-We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets. These data sets are available from the following links. 
-* [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
-* [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
-
-It is worth to mention that both [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip) and [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip) are based on the orginal offsets of [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset.
 
 ## [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
 [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)  dataset  comprises  only  NER  task. To solve the EL task, we expand this dataset by leveraging a CUI for each mention in the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset. We use the most recent 
@@ -209,10 +210,10 @@ Since the manually annotated CORD-NER test set is not publicly available, we can
 
 ## Entity Linking Performances
 
-We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip) 2. [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip). 
+We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. [UMLS-based Test Set](#umls-based-test-set) 2. [Manually Annotated Test Set](#manually-annotated-test-set). 
 
 
-### Entity Linking Performances of BENNERD on [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
+### Entity Linking Performances of BENNERD on [UMLS-based Test Set](#umls-based-test-set)
 We show the EL performances on [UMLS-based test set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip). We report Accuracy@n, where n = 1, 10, 20, 30, 40, 50. Accuracy@1, gold candidate was ranked highest. Accuracy@{10, 20, 30, 40, 50} indicates, gold candidate was in top 10, 20, 30, 40 or in 50 predictions of the candidate ranker. In the performances of BENNERD with NER's prediction, we fed the NER's predictions to the entity linking model to judge the entity linking performances. In contrast to the performances of BENNERD with NER's gold and NER's true positive, we fed the gold entities and true positive entities (where the model correctly preditcs the positive category) respectively to judge the entity linking performances.
 ```
     -------------------------------------------------------------------------------------------
@@ -226,8 +227,8 @@ We show the EL performances on [UMLS-based test set](https://github.com/aistairc
     -------------------------------------------------------------------------------------------
 ```
 
-### Entity Linking Performances of BENNERD on [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
-We show the EL performances on [manually annotated test set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip). In [manually annotated test set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip), the performances in terms of Accuracy@{1, 10, 20, 30, 40, 50} are based on NER's predictions that fed to entity linking model.  
+### Entity Linking Performances of BENNERD on [Manually Annotated Test Set](#manually-annotated-test-set)
+We show the EL performances on [manually annotated test set](#manually-annotated-test-set). In [manually annotated test set](#manually-annotated-test-set), the performances in terms of Accuracy@{1, 10, 20, 30, 40, 50} are based on NER's predictions that fed to entity linking model.  
 
 
 ```
