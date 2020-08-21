@@ -1,28 +1,10 @@
-# Table of contents
+# BENNERD
 
 - [Overview](#overview)
-- [Background](#background)
-- [BENNERD Description](#bennerd-description)
-  * [Usage of BENNERD](#usage-of-bennerd)
-- [[BENNERD DEMO](http://prm-ezcatdb.cbrc.jp/bennerd/)](#-bennerd-demo--http---prm-ezcatdbcbrcjp-bennerd--)
+- [BENNERD DEMO](#-bennerd-demo--http---prm-ezcatdbcbrcjp-bennerd--)
 - [Test Sets](#test-sets)
-  * [Sample Data Format of Extended CORD-NER](#sample-data-format-of-extended-cord-ner)
-  * [[UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)](#-umls-based-test-set--https---githubcom-aistairc-cord-ner-blob-master-data-umls-based-test-setzip-)
-  * [[Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)](#-manually-annotated-test-set--https---githubcom-aistairc-cord-ner-blob-master-data-manually-annotated-test-setzip-)
-- [BENNERD System](#bennerd-system)
-  * [[BENNERD Web Interface](http://prm-ezcatdb.cbrc.jp/bennerd/)](#-bennerd-web-interface--http---prm-ezcatdbcbrcjp-bennerd--)
-  * [BENNERD Back-end](#bennerd-back-end)
-    + [Neural Named Entity Recognition](#neural-named-entity-recognition)
-    + [Entity Linking](#entity-linking)
+- [BENNERD Description](#bennerd-description)
 - [Evaluation](#evaluation)
-  * [NER Performances](#ner-performances)
-    + [BENNERD Performance Comparison with Existing Models on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset](#bennerd-performance-comparison-with-existing-models-on--cord-ner--https---uofiappboxcom-s-k8pw7d5kozzpoum2jwfaqdaey1oij93x--dataset)
-    + [BENNERD NER Performances using Different Pre-trained BERT Models](#bennerd-ner-performances-using-different-pre-trained-bert-models)
-    + [Categorical Performances Based on All Categories](#categorical-performances-based-on-all-categories)
-  * [Entity Linking Performances](#entity-linking-performances)
-    + [Entity Linking Performances of BENNERD on [UMLS-based Test Set](#umls-based-test-set)](#entity-linking-performances-of-bennerd-on--umls-based-test-set---umls-based-test-set-)
-    + [Entity Linking Performances of BENNERD on [Manually Annotated Test Set](#manually-annotated-test-set)](#entity-linking-performances-of-bennerd-on--manually-annotated-test-set---manually-annotated-test-set-)
-- [Summary](#summary)
 - [Acknowledgement](#acknowledgement)
 - [Contact](#contact)
 - [Citation](#citation)
@@ -36,16 +18,7 @@ We provide an **[web interface](#bennerd-demo)** so that end-users can easily an
 The **[evaluation](#evaluation)** of our method are also reported on this page with comparing with several existing state-of-the-art systems.
 We also release our manually annotated test- and UMLS-based **[test sets](#test-sets)** that are used to evaluate our system to support the NLP community in developing the natural language processing (NLP) systems for the coronavirus disease.
 
-# Background
-In response to the coronavirus disease 2019 (COVID-19) for global research community to apply recent advances in NLP, COVID-19 Open Research Dataset ([CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)) is proposed as a research challenge. The dataset consists of a resource of over 181,000 scholarly articles that are related to the infectious disease COVID-19 caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). To facilitate COVID-19 studies, since named entity recognition (NER) is considered a fundamental step in text mining system, [data mining group](http://dm1.cs.uiuc.edu) of [CS@UIUC](https://cs.illinois.edu) has created [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset with comprehensive NE annotations. The annotations are based on distant or weak supervision. The [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset includes 29,500 documents from the [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) corpus. 
-
-# BENNERD Description
-In this work, we present a BERT-based Exhaustive Neural Named Entity Recognition and Disambiguation (BENNERD) system by addressing [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set. The entity disambiguation (ED) or entity normalization (EN) is a.k.a entity linking (EL) task. The objective of this work is to facilitate recent pandemic of corona virus disease 2019 (COVID-19) research that mainly covers **biomedical domain**, especially new entity types (e.g., coronavirus, viral proteins, and immune responses) by addressing [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset. In contrast to biomedical domain, it also gives a shed on **general domain** entity types (e.g., person, organization, location, date, group etc.). Moreover, along with **flat** or non-overlapping, the BENNERD system also solves **nested** or overlapping entities. The BENNERD system is composed of four models: **NER** that enumerates [exhaustively](https://www.aclweb.org/anthology/D18-1309.pdf) all possible spans as potential entity mentions and classifies them into entity types, masked language model as **BERT**, **candidate generation model** to find a list of candidate entities, and **candidate ranking model** to disambiguate the entity for concept indexing. 
-
-## Usage of BENNERD
-Annotation tasks like entity mention detection and entity normalization based on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) can be performed in BENNERD for COVID-19 research. The [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) contains 63 biomedical and general entity types therefore BENNERD can be applied on other biomedical corpora like GENIA, BC5CDR etc. In contrast to biomedical domain, BENNERD can be applied on general domain for mention detection and normalization in some extent as the unified medical language system ([UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html)) is used as only knowledge base. BENNERD can be used to visualize annotation output for manual analysis and evaluation performances. 
-
-# [BENNERD DEMO](http://prm-ezcatdb.cbrc.jp/bennerd/)
+# BENNERD DEMO
 The BENNERD system provides a [web interface](http://prm-ezcatdb.cbrc.jp/bennerd/) to facilitate the process of text annotation and its disambiguation without any training for end users like researchers or biologists. In our demo, users can input a plain text of any biomedical document to extract entities with their corresponding types and UMLS CUI(s) in BRAT format. It also provides a feature to filter out some of the specific entities by their types via a simple checkbox list (the setting button on the top right of page).
 
 Users can access our demo via [http://prm-ezcatdb.cbrc.jp/bennerd/](http://prm-ezcatdb.cbrc.jp/bennerd/).
@@ -86,29 +59,45 @@ Examples of annotation for an entity (**T**), a normalization (**N**) are shown 
 ```
 
 ## [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
+
 [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)  dataset  comprises  only  NER  task. To solve the EL task, we expand this dataset by leveraging a CUI for each mention in the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset. We use the most recent 
 [UMLS version 2020AA release](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) that includes coronavirus-related concepts. To create a dataset for EL, we use a dictionary matching approach based on exact match using [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) KB. [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) includes 10,470,248 mentions, among which 6,794,126 and 3,676,122 mentions are respectively present and absent in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html). Therefore, the entity coverage ratio of [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) over the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) is 64.89%. We annotate the entity mentions that are not found in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) with CUI_LESS. Finally we augment the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset with CUI for each correspondence mention. To evaluate the EL performance on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x), 302,166 mentions are assigned for 5,000 test set. We call this UMLS-based test set.
 
 ## [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
 In addition with the [UMLS-based test set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip), we assigned a biologist to annotate 1,000 random sentences based on chemical, disease, and gene types along with its corresponding CUI to create a [manually annotated test set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip). 
 
+# BENNERD Description
 
-# BENNERD System
+## Background
+In response to the coronavirus disease 2019 (COVID-19) for global research community to apply recent advances in NLP, COVID-19 Open Research Dataset ([CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)) is proposed as a research challenge. The dataset consists of a resource of over 181,000 scholarly articles that are related to the infectious disease COVID-19 caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). To facilitate COVID-19 studies, since named entity recognition (NER) is considered a fundamental step in text mining system, [data mining group](http://dm1.cs.uiuc.edu) of [CS@UIUC](https://cs.illinois.edu) has created [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset with comprehensive NE annotations. The annotations are based on distant or weak supervision. The [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset includes 29,500 documents from the [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) corpus. 
+
+## Introduction
+
+In this work, we present a BERT-based Exhaustive Neural Named Entity Recognition and Disambiguation (BENNERD) system by addressing [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set. The entity disambiguation (ED) or entity normalization (EN) is a.k.a entity linking (EL) task. The objective of this work is to facilitate recent pandemic of corona virus disease 2019 (COVID-19) research that mainly covers **biomedical domain**, especially new entity types (e.g., coronavirus, viral proteins, and immune responses) by addressing [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset. In contrast to biomedical domain, it also gives a shed on **general domain** entity types (e.g., person, organization, location, date, group etc.). Moreover, along with **flat** or non-overlapping, the BENNERD system also solves **nested** or overlapping entities. The BENNERD system is composed of four models: **NER** that enumerates [exhaustively](https://www.aclweb.org/anthology/D18-1309.pdf) all possible spans as potential entity mentions and classifies them into entity types, masked language model as **BERT**, **candidate generation model** to find a list of candidate entities, and **candidate ranking model** to disambiguate the entity for concept indexing. 
+
+## Usage of BENNERD
+Annotation tasks like entity mention detection and entity normalization based on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) can be performed in BENNERD for COVID-19 research. The [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) contains 63 biomedical and general entity types therefore BENNERD can be applied on other biomedical corpora like GENIA, BC5CDR etc. In contrast to biomedical domain, BENNERD can be applied on general domain for mention detection and normalization in some extent as the unified medical language system ([UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html)) is used as only knowledge base. BENNERD can be used to visualize annotation output for manual analysis and evaluation performances. 
+
+## BENNERD System
 BENNERD system mainly comprises two platforms: [BENNERD web interface](http://prm-ezcatdb.cbrc.jp/bennerd/) and BENNERD back-end server. The overall workflow of the BENNERD system is illustrated as below.
 
 ![Work Flow](images/BENNERD_WORK_FLOW-1.png)
 
-## [BENNERD Web Interface](http://prm-ezcatdb.cbrc.jp/bennerd/)
+### [BENNERD Web Interface](http://prm-ezcatdb.cbrc.jp/bennerd/)
 In [BENNERD web interface](http://prm-ezcatdb.cbrc.jp/bennerd/), the user interface contains input panel, load a sample tab, annotation tab, gear box tab, and .TXT and .ANN tabs. For a given text from users or loading a sample text from a sample list, the annotation tab will show the annotations with the text based on best NER- and EL-based training model. Different colors represent different entity types and, when the cursor floats over a coloured box representing an entity above text, the corresponding concept unique identifier (CUI) on the UMLS is shown. Users can save the machine readable text and annotation files as .txt and .ann where the .ann annotation file provides standoff annotation output in [brat](https://brat.nlplab.org) format.
 
-## BENNERD Back-end
+### BENNERD Back-end
 The BENNERD back-end is for storing tools (e.g., NER, EL) that transform into a pipeline. It is composed of BERT-based exhaustive neural named entity recognition (NER) model and the prediction of NER model then fed to entity linking (EL) model that disambiguate the predicted entities by addressing candidate generation model (to find a list of candidate entities) and candidate ranking model.
 
-### Neural Named Entity Recognition
+#### Neural Named Entity Recognition
 Named entity recognition (NER) is a task of finding entities with specific semantic types such as Protein, Cell, and RNA in text. We build neural NER model, based on the [BERT](https://www.aclweb.org/anthology/N19-1423.pdf) model. The layer receives subword sequences and assigns contextual representations to the subwords via BERT. We generate mention candidates based on the same idea as the [span-based model](https://www.aclweb.org/anthology/D18-1309.pdf).
 
-### Entity Linking
+#### Entity Linking
 The [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset gives a shed on entity recognition system, but it does not address entity linking (EL) task which is important to address COVID-19 research.  For example, the mention SARS-CoV-2 needs to be disambiguated. Since the term SARS-CoV-2 in this sentence refers to a virus, it should be linked to an entry of a virus in the knowledge base (KB), not to an entry of ‘SARS-CoV-2 vaccination’, which corresponds to therapeutic or preventive procedure to prevent a disease. To address EL, we implement **candidate generation model** to find a list of candidate entities in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) KB for linking and **candidate ranking model** to disambiguate the entity for concept indexing.
+
+## Summary
+We presented the **BENNERD** system for entity linking, hoping that we can bring insights for the COVID-19 studies on making scientific discoveries. The **BENNERD** system is continually evolving; we will continue to improve the system as well as to implement new functions such as relation extraction to further facilitate COVID-19 research.
+
 
 # Evaluation
 
@@ -263,8 +252,6 @@ We show the EL performances on [manually annotated test set](#manually-annotated
     BENNERD               24.27     42.95     47.07     48.81     50.00     50.92
     ------------------------------------------------------------------------------
 ```
-# Summary
-We presented the **BENNERD** system for entity linking, hoping that we can bring insights for the COVID-19 studies on making scientific discoveries. The **BENNERD** system is continually evolving; we will continue to improve the system as well as to implement new functions such as relation extraction to further facilitate COVID-19 research.
 
 # Acknowledgement
 This work is based on results obtained from a project commissioned by the Public/Private R&D Investment Strategic Expansion PrograM (PRISM)
