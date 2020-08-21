@@ -1,20 +1,17 @@
 # **BENNERD**: **B**ERT-based **E**xhaustive **N**eural **N**amed **E**ntity **R**ecognition and **D**isambiguation
 
 # Overview
-On this page, we present our recent research related to the coronavirus disease in 2019.
-Our main objective of this work is to propose a biomedical entity linking system and then provide a web interface for end-users to facilitate and accelerate COVID-19 studies.
-The results of our method also reported on this page and compared to several previous works.
-We also release our manually annotated test- and UMLS-based test sets that are used in this research as part of our effort to support the community in studying the coronavirus disease.
+We present our recent efforts related to the coronavirus disease in 2019.
+Our main objective is to provide our recent biomedical entity linking system for end-users to facilitate and accelerate COVID-19 studies.
+We provide an **[web interface](#bennerd-demo)** so that end-users can easily analyze their texts with our system. 
+The **[evaluation](#evaluation)** of our method are also reported on this page with comparing with several existing state-of-the-art systems.
+We also release our **[manually annotated test- and UMLS-based test sets](#test-sets)** that are used to evaluate our system to support the NLP community in developing the natural language processing (NLP) systems for the coronavirus disease.
 
 # Background
-In response to the coronavirus disease 2019 (COVID-19) for global research community to apply recent advances in natural language processing (NLP), COVID-19 Open Research Dataset ([CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)) is an emerging research challenge with a resource of over 181,000 scholarly articles that are related to the infectious disease COVID-19 caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). To facilitate COVID-19 studies, since named entity recognition (NER) is considered a fundamental step in text mining system, [data mining group](http://dm1.cs.uiuc.edu) of [CS@UIUC](https://cs.illinois.edu) has created [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset with comprehensive NE annotations. The annotations are based on distant or weak supervision. The [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset includes 29,500 documents from the [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) corpus. 
+In response to the coronavirus disease 2019 (COVID-19) for global research community to apply recent advances in NLP, COVID-19 Open Research Dataset ([CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)) is proposed as a research challenge. The dataset consists of a resource of over 181,000 scholarly articles that are related to the infectious disease COVID-19 caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). To facilitate COVID-19 studies, since named entity recognition (NER) is considered a fundamental step in text mining system, [data mining group](http://dm1.cs.uiuc.edu) of [CS@UIUC](https://cs.illinois.edu) has created [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset with comprehensive NE annotations. The annotations are based on distant or weak supervision. The [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset includes 29,500 documents from the [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) corpus. 
 
-## Corpora Link
-- [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge)
-- [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)
- 
 # BENNERD Description
-In this work, we present a BERT-based Exhaustive Neural Named Entity Recognition and Disambiguation (BENNERD) system by addressing [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set. The entity disambiguation (ED) or entity normalization (EN) is a.k.a entity linking (EL) task. The objective of this work is to facilitate recent pandemic of corona virus disease 2019 (COVID-19) research that mainly covers **biomedical domain**, especially new entity types (e.g., coronavirus, viral proteins, immune responses) by addressing [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset. In contrast to biomedical domain, it also gives a shed on **general domain** entity types (e.g., person, organization, location, date, group etc.). Moreover, along with **flat** or non-overlapping, the BENNERD system also solves **nested** or overlapping entities. The BENNERD system is composed of four models: **NER** that enumerates [exhaustively](https://www.aclweb.org/anthology/D18-1309.pdf) all possible spans as potential entity mentions and classifies them into entity types, masked language model as **BERT**, **candidate generation model** to find a list of candidate entities, and **candidate ranking model** to disambiguate the entity for concept indexing. 
+In this work, we present a BERT-based Exhaustive Neural Named Entity Recognition and Disambiguation (BENNERD) system by addressing [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data set. The entity disambiguation (ED) or entity normalization (EN) is a.k.a entity linking (EL) task. The objective of this work is to facilitate recent pandemic of corona virus disease 2019 (COVID-19) research that mainly covers **biomedical domain**, especially new entity types (e.g., coronavirus, viral proteins, and immune responses) by addressing [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset. In contrast to biomedical domain, it also gives a shed on **general domain** entity types (e.g., person, organization, location, date, group etc.). Moreover, along with **flat** or non-overlapping, the BENNERD system also solves **nested** or overlapping entities. The BENNERD system is composed of four models: **NER** that enumerates [exhaustively](https://www.aclweb.org/anthology/D18-1309.pdf) all possible spans as potential entity mentions and classifies them into entity types, masked language model as **BERT**, **candidate generation model** to find a list of candidate entities, and **candidate ranking model** to disambiguate the entity for concept indexing. 
 
 # [BENNERD DEMO](http://prm-ezcatdb.cbrc.jp/bennerd/)
 The BENNERD system provides a [web interface](http://prm-ezcatdb.cbrc.jp/bennerd/) to facilitate the process of text annotation and its disambiguation without any training for end users like researchers or biologists. In our demo, users can input a plain text of any biomedical document to extract entities with their corresponding types and UMLS CUI(s) in BRAT format. It also provides a feature to filter out some of the specific entities by their types via a simple checkbox list (the setting button on the top right of page).
@@ -23,7 +20,7 @@ Users can access our demo via [http://prm-ezcatdb.cbrc.jp/bennerd/](http://prm-e
 
 ![Demo interface](images/demo-screenshot.png)
 
-# Sample Data Format of Extended CORD-NER 
+## Sample Data Format of Extended CORD-NER 
 Examples of annotation for an entity (**T**), a normalization (**N**) are shown in the following. Text-bound annotation identifies a specific span of text and assigns it a type. In text-bound annotation (**T1**) of a span “**Angiotensin-converting enzyme 2**”,  **0** denotes start-offset and **31** denotes end-offset of the annotation span, where type is **GENE_OR_GENOME**. The normalization annotation (**N1**) is attached to the text-bound annotation (**T1**) which is associated with the unified medical language system ([UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html)) entry with the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) concept unique identifier (CUI) as **C0960880**. 
 ```
     T1	GENE_OR_GENOME 0 31	Angiotensin-converting enzyme 2
@@ -47,13 +44,21 @@ Examples of annotation for an entity (**T**), a normalization (**N**) are shown 
     T10	CORONAVIRUS 282 292	SARS-CoV-2
     N10	Reference T3	UMLS:C5203676
 ```
+# Test Sets
 
-## Test Sets Link
-We release the UMLS-based and manually annotated test sets and are available from the following links. 
+We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets. These data sets are available from the following links. 
 * [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
 * [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
 
 It is worth to mention that both [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip) and [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip) are based on the orginal offsets of [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset.
+
+## [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
+[CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)  dataset  comprises  only  NER  task. To solve the EL task, we expand this dataset by leveraging a CUI for each mention in the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset. We use the most recent 
+[UMLS version 2020AA release](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) that includes coronavirus-related concepts. To create a dataset for EL, we use a dictionary matching approach based on exact match using [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) KB. [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) includes 10,470,248 mentions, among which 6,794,126 and 3,676,122 mentions are respectively present and absent in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html). Therefore, the entity coverage ratio of [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) over the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) is 64.89%. We annotate the entity mentions that are not found in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) with CUI_LESS. Finally we augment the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset with CUI for each correspondence mention. To evaluate the EL performance on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x), 302,166 mentions are assigned for 5,000 test set. We call this UMLS-based test set.
+
+## [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
+In addition with the [UMLS-based test set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip), we assigned a biologist to annotate 1,000 random sentences based on chemical, disease, and gene types along with its corresponding CUI to create a [manually annotated test set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip). 
+
 
 # BENNERD System
 BENNERD system mainly comprises two platforms: [BENNERD web interface](http://prm-ezcatdb.cbrc.jp/bennerd/) and BENNERD back-end server. The overall workflow of the BENNERD system is illustrated as below.
@@ -69,7 +74,36 @@ The BENNERD back-end is for storing tools (e.g., NER, EL) that transform into a 
 ### Neural Named Entity Recognition
 Named entity recognition (NER) is a task of finding entities with specific semantic types such as Protein, Cell, and RNA in text. We build neural NER model, based on the [BERT](https://www.aclweb.org/anthology/N19-1423.pdf) model. The layer receives subword sequences and assigns contextual representations to the subwords via BERT. We generate mention candidates based on the same idea as the [span-based model](https://www.aclweb.org/anthology/D18-1309.pdf).
 
-#### BENNERD NER Performances using Different Pre-trained BERT Models
+### Entity Linking
+The [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset gives a shed on entity recognition system, but it does not address entity linking (EL) task which is important to address COVID-19 research.  For example, the mention SARS-CoV-2 needs to be disambiguated. Since the term SARS-CoV-2 in this sentence refers to a virus, it should be linked to an entry of a virus in the knowledge base (KB), not to an entry of ‘SARS-CoV-2 vaccination’, which corresponds to therapeutic or preventive procedure to prevent a disease. To address EL, we implement **candidate generation model** to find a list of candidate entities in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) KB for linking and **candidate ranking model** to disambiguate the entity for concept indexing.
+
+# Evaluation
+
+## NER Performances
+
+We evaluate our NER system from several aspects: comparison with existing state-of-the-art models, different pre-trained bert models, categorical performance, and evaluation on manually annotated test sets.
+
+### Performance Comparison with State-of-the-art Models on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset
+
+    ---------------------------------------------------------------------------------------------
+        Model                  Gene                    Chemical                  Disease
+                     ------------------------  ------------------------  ------------------------     
+                     Precision  Recall  F1(%)  Precision  Recall  F1(%)  Precision  Recall  F1(%)
+    ---------------  ---------  ------  -----  ---------  ------  -----  ---------  ------  -----
+    SciSpacy*          91.48    82.06   86.51    64.66    39.81   49.28     8.11     2.75    4.11
+    (BIONLP13CG)
+    ---------------  ------------------------  ------------------------  ------------------------
+    SciSpacy*            -        -       -      86.97    51.86   64.69     80.31   59.65   68.46
+    (BC5CDR)
+    ---------------  ------------------------  ------------------------  ------------------------
+    CORD-NER System    82.14    74.68   72.23    82.93    75.22   78.89     75.73   68.42   71.89
+    ---------------------------------------------------------------------------------------------
+
+- [SciSpacy (BIONLP13CG)](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.5/en_ner_bionlp13cg_md-0.2.5.tar.gz) is a [SciSpacy](https://allenai.github.io/scispacy/) NER model trained on the BIONLP13CG corpus.
+- [SciSpacy (BC5CDR)](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.5/en_ner_bc5cdr_md-0.2.5.tar.gz) is a [SciSpacy](https://allenai.github.io/scispacy/) NER model trained on the BC5CDR corpus.
+- *Note: The results of SciSpacy are based on randomly picked 1000 sentences from [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset.
+
+### BENNERD NER Performances using Different Pre-trained BERT Models
 
 Since our NER model is mainly based on BERT architecture and there are numerious pre-trained BERT models on different corpora, we tested the performance of BENNERD NER on some of the well-known pre-trained BERT models for the biomedical domain. We also applied the same training setting to make sure that the results are comparable. We judge the NER performnces of BENNERD on development- and test-sets using [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts), [SciBERT](https://github.com/allenai/scibert), and 
 [Covid BERT Base](https://huggingface.co/deepset/covid_bert_base). In development- and test-sets, we obtain the best performances **85.52%** and **83.03%** respectively in terms of F1-score using [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts).
@@ -90,7 +124,7 @@ Since our NER model is mainly based on BERT architecture and there are numerious
 * [SciBERT](https://github.com/allenai/scibert) is trained on papers from the corpus of [semanticscholar.org](https://www.semanticscholar.org).
 * [Covid BERT Base](https://huggingface.co/deepset/covid_bert_base) is based on fine-tuned a BERT base model on the [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) corpus. 
 
-#### Categorical Performances Based on All Categories
+### Categorical Performances Based on All Categories
 
 We show the categorical performances of NER model trained on [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts) over the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset. Along with categorical performances on precision, recall, and F1-score, we also show the numbers of **#TPs** can be denoted as number of true positive outcomes where the model correctly preditcs the positive category, **#Preds** as number of predicted entities, and **#Golds** as number of gold entites of each category.
 
@@ -162,28 +196,8 @@ We show the categorical performances of NER model trained on [ClinicalCovid BERT
     WORK_OF_ART                           34.75      14.44      20.40        41      118       284
     ----------------------------------------------------------------------------------------------
   
-#### Performance Comparison with State-of-the-art Models on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset
-
-    ---------------------------------------------------------------------------------------------
-        Model                  Gene                    Chemical                  Disease
-                     ------------------------  ------------------------  ------------------------     
-                     Precision  Recall  F1(%)  Precision  Recall  F1(%)  Precision  Recall  F1(%)
-    ---------------  ---------  ------  -----  ---------  ------  -----  ---------  ------  -----
-    SciSpacy*          91.48    82.06   86.51    64.66    39.81   49.28     8.11     2.75    4.11
-    (BIONLP13CG)
-    ---------------  ------------------------  ------------------------  ------------------------
-    SciSpacy*            -        -       -      86.97    51.86   64.69     80.31   59.65   68.46
-    (BC5CDR)
-    ---------------  ------------------------  ------------------------  ------------------------
-    CORD-NER System    82.14    74.68   72.23    82.93    75.22   78.89     75.73   68.42   71.89
-    ---------------------------------------------------------------------------------------------
-
-- [SciSpacy (BIONLP13CG)](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.5/en_ner_bionlp13cg_md-0.2.5.tar.gz) is a [SciSpacy](https://allenai.github.io/scispacy/) NER model trained on the BIONLP13CG corpus.
-- [SciSpacy (BC5CDR)](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.5/en_ner_bc5cdr_md-0.2.5.tar.gz) is a [SciSpacy](https://allenai.github.io/scispacy/) NER model trained on the BC5CDR corpus.
-- *Note: The results of SciSpacy are based on randomly picked 1000 sentences from [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset.
-
-#### BENNERD Performances based on Indirect comparison with State-of-the-art Models on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset
-Performance comparison of our model BENNERD on three major biomedical entity types in CORD-19 corpus. Since the manually annotated CORD-NER test set is not publicly available, we can not directly compare our system performances on the gene, chemical, and disease entity types. Instead, here we  show  the  performance  of gene, chemical, and disease based on our 5,000 test set.
+### BENNERD Performances on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset
+Since the manually annotated CORD-NER test set is not publicly available, we can not directly compare our system performances on the gene, chemical, and disease entity types. Instead, here we show the  performance of gene, chemical, and disease based on our 5,000 test set.
 
     ----------------------------------------------------------------------------------------------
         Model                   Gene                    Chemical                   Disease
@@ -193,17 +207,12 @@ Performance comparison of our model BENNERD on three major biomedical entity typ
     BENNERD             76.07     74.8   75.45    83.55     84.60  84.07    84.85     84.9   84.92
     ----------------------------------------------------------------------------------------------
 
-### Entity Linking
-The [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset gives a shed on entity recognition system, but it does not address entity linking (EL) task which is important to address COVID-19 research.  For example, the mention SARS-CoV-2 needs to be disambiguated. Since the term SARS-CoV-2 in this sentence refers to a virus, it should be linked to an entry of a virus in the knowledge base (KB), not to an entry of ‘SARS-CoV-2 vaccination’, which corresponds to therapeutic or preventive procedure to prevent a disease. To address EL, we implement **candidate generation model** to find a list of candidate entities in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) KB for linking and **candidate ranking model** to disambiguate the entity for concept indexing.
+## Entity Linking Performances
 
-### Entity Linking Performances on Test Sets
 We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip) 2. [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip). 
 
-#### [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
-[CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x)  dataset  comprises  only  NER  task. To solve the EL task, we expand this dataset by leveraging a CUI for each mention in the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset. We use the most recent 
-[UMLS version 2020AA release](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) that includes coronavirus-related concepts. To create a dataset for EL, we use a dictionary matching approach based on exact match using [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) KB. [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) includes 10,470,248 mentions, among which 6,794,126 and 3,676,122 mentions are respectively present and absent in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html). Therefore, the entity coverage ratio of [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) over the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) is 64.89%. We annotate the entity mentions that are not found in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) with CUI_LESS. Finally we augment the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset with CUI for each correspondence mention. To evaluate the EL performance on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x), 302,166 mentions are assigned for 5,000 test set. We call this UMLS-based test set.
 
-#### Entity Linking Performances of BENNERD on [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
+### Entity Linking Performances of BENNERD on [UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)
 We show the EL performances on [UMLS-based test set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip). We report Accuracy@n, where n = 1, 10, 20, 30, 40, 50. Accuracy@1, gold candidate was ranked highest. Accuracy@{10, 20, 30, 40, 50} indicates, gold candidate was in top 10, 20, 30, 40 or in 50 predictions of the candidate ranker. In the performances of BENNERD with NER's prediction, we fed the NER's predictions to the entity linking model to judge the entity linking performances. In contrast to the performances of BENNERD with NER's gold and NER's true positive, we fed the gold entities and true positive entities (where the model correctly preditcs the positive category) respectively to judge the entity linking performances.
 ```
     -------------------------------------------------------------------------------------------
@@ -216,11 +225,10 @@ We show the EL performances on [UMLS-based test set](https://github.com/aistairc
     BENNERD + NER's True Positive      30.31     48.91     54.60     56.95     58.27     59.49
     -------------------------------------------------------------------------------------------
 ```
-#### [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
-In addition with the [UMLS-based test set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip), we assigned a biologist to annotate 1,000 random sentences based on chemical, disease, and gene types along with its corresponding CUI to create a [manually annotated test set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip). 
 
-#### Entity Linking Performances of BENNERD on [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
+### Entity Linking Performances of BENNERD on [Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)
 We show the EL performances on [manually annotated test set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip). In [manually annotated test set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip), the performances in terms of Accuracy@{1, 10, 20, 30, 40, 50} are based on NER's predictions that fed to entity linking model.  
+
 
 ```
     ------------------------------------------------------------------------------
