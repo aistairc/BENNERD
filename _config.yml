@@ -1,5 +1,5 @@
 theme: jekyll-theme-cayman
-title: CORD-NERD
-description: Covid 19 Open Research Data set used for Named Entity Recognition and Disambiguation 
+title: BENNERD
+description: BERT-based Exhaustive Neural Named Entity Recognition and Disambiguation 
 github:
   is_project_page: false

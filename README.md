@@ -1,4 +1,33 @@
-# **BENNERD**: **B**ERT-based **E**xhaustive **N**eural **N**amed **E**ntity **R**ecognition and **D**isambiguation
+# Table of contents
+
+- [Overview](#overview)
+- [Background](#background)
+- [BENNERD Description](#bennerd-description)
+  * [Usage of BENNERD](#usage-of-bennerd)
+- [[BENNERD DEMO](http://prm-ezcatdb.cbrc.jp/bennerd/)](#-bennerd-demo--http---prm-ezcatdbcbrcjp-bennerd--)
+- [Test Sets](#test-sets)
+  * [Sample Data Format of Extended CORD-NER](#sample-data-format-of-extended-cord-ner)
+  * [[UMLS-based Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip)](#-umls-based-test-set--https---githubcom-aistairc-cord-ner-blob-master-data-umls-based-test-setzip-)
+  * [[Manually Annotated Test Set](https://github.com/aistairc/CORD-NER/blob/master/data/Manually_Annotated_Test_Set.zip)](#-manually-annotated-test-set--https---githubcom-aistairc-cord-ner-blob-master-data-manually-annotated-test-setzip-)
+- [BENNERD System](#bennerd-system)
+  * [[BENNERD Web Interface](http://prm-ezcatdb.cbrc.jp/bennerd/)](#-bennerd-web-interface--http---prm-ezcatdbcbrcjp-bennerd--)
+  * [BENNERD Back-end](#bennerd-back-end)
+    + [Neural Named Entity Recognition](#neural-named-entity-recognition)
+    + [Entity Linking](#entity-linking)
+- [Evaluation](#evaluation)
+  * [NER Performances](#ner-performances)
+    + [BENNERD Performance Comparison with Existing Models on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset](#bennerd-performance-comparison-with-existing-models-on--cord-ner--https---uofiappboxcom-s-k8pw7d5kozzpoum2jwfaqdaey1oij93x--dataset)
+    + [BENNERD NER Performances using Different Pre-trained BERT Models](#bennerd-ner-performances-using-different-pre-trained-bert-models)
+    + [Categorical Performances Based on All Categories](#categorical-performances-based-on-all-categories)
+  * [Entity Linking Performances](#entity-linking-performances)
+    + [Entity Linking Performances of BENNERD on [UMLS-based Test Set](#umls-based-test-set)](#entity-linking-performances-of-bennerd-on--umls-based-test-set---umls-based-test-set-)
+    + [Entity Linking Performances of BENNERD on [Manually Annotated Test Set](#manually-annotated-test-set)](#entity-linking-performances-of-bennerd-on--manually-annotated-test-set---manually-annotated-test-set-)
+- [Summary](#summary)
+- [Acknowledgement](#acknowledgement)
+- [Contact](#contact)
+- [Citation](#citation)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 # Overview
 We present our recent efforts related to the coronavirus disease in 2019.
@@ -87,25 +116,27 @@ The [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) data
 
 We evaluate our NER system from several aspects: comparison with existing state-of-the-art models, different pre-trained bert models, categorical performance, and evaluation on manually annotated test sets.
 
-### Performance Comparison with State-of-the-art Models on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset
+### BENNERD Performance Comparison with Existing Models on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset
 
-    ---------------------------------------------------------------------------------------------
-        Model                  Gene                    Chemical                  Disease
-                     ------------------------  ------------------------  ------------------------     
-                     Precision  Recall  F1(%)  Precision  Recall  F1(%)  Precision  Recall  F1(%)
-    ---------------  ---------  ------  -----  ---------  ------  -----  ---------  ------  -----
-    SciSpacy*          91.48    82.06   86.51    64.66    39.81   49.28     8.11     2.75    4.11
+Since the manually annotated CORD-NER test set is not publicly available, we can not directly compare our system performances on the gene, chemical, and disease entity types. Instead, here we show the  performance of gene, chemical, and disease based on our 5,000 test set.
+
+    ------------------------------------------------------------------------------------------------------------------------
+        Model                   Gene                    Chemical                   Disease                  All
+                      ------------------------  ------------------------  ------------------------  ------------------------       
+                      Precision  Recall  F1(%)  Precision  Recall  F1(%)  Precision  Recall  F1(%)  Precision  Recall  F1(%) 
+    ---------------  ------------------------  ------------------------  -------------------------  -------------------------
+    SciSpacy*            
     (BIONLP13CG)
-    ---------------  ------------------------  ------------------------  ------------------------
-    SciSpacy*            -        -       -      86.97    51.86   64.69     80.31   59.65   68.46
+    ---------------  ------------------------  ------------------------  -------------------------  -------------------------
+    SciSpacy*           
     (BC5CDR)
-    ---------------  ------------------------  ------------------------  ------------------------
-    CORD-NER System    82.14    74.68   72.23    82.93    75.22   78.89     75.73   68.42   71.89
-    ---------------------------------------------------------------------------------------------
+    ---------------   ---------  ------  -----  ---------  ------  -----  ---------  ------  -----  ---------  ------   -----
+    BENNERD             76.07     74.8   75.45    83.55     84.60  84.07    84.85     84.9   84.92  82.83      83.23    83.03
+    -------------------------------------------------------------------------------------------------------------------------
 
 - [SciSpacy (BIONLP13CG)](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.5/en_ner_bionlp13cg_md-0.2.5.tar.gz) is a [SciSpacy](https://allenai.github.io/scispacy/) NER model trained on the BIONLP13CG corpus.
 - [SciSpacy (BC5CDR)](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.5/en_ner_bc5cdr_md-0.2.5.tar.gz) is a [SciSpacy](https://allenai.github.io/scispacy/) NER model trained on the BC5CDR corpus.
-- *Note: The results of SciSpacy are based on randomly picked 1000 sentences from [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset.
+- *Note: Our BENNERD results used [ClinicalCovid BERT](https://github.com/manueltonneau/covid-berts).
 
 ### BENNERD NER Performances using Different Pre-trained BERT Models
 
@@ -200,24 +231,13 @@ We show the categorical performances of NER model trained on [ClinicalCovid BERT
     WORK_OF_ART                           34.75      14.44      20.40        41      118       284
     ----------------------------------------------------------------------------------------------
   
-### BENNERD Performances on [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) Dataset
-Since the manually annotated CORD-NER test set is not publicly available, we can not directly compare our system performances on the gene, chemical, and disease entity types. Instead, here we show the  performance of gene, chemical, and disease based on our 5,000 test set.
-
-    ----------------------------------------------------------------------------------------------
-        Model                   Gene                    Chemical                   Disease
-                      ------------------------  ------------------------  ------------------------       
-                      Precision  Recall  F1(%)  Precision  Recall  F1(%)  Precision  Recall  F1(%)
-    ---------------   ---------  ------  -----  ---------  ------  -----  ---------  ------  -----
-    BENNERD             76.07     74.8   75.45    83.55     84.60  84.07    84.85     84.9   84.92
-    ----------------------------------------------------------------------------------------------
-
 ## Entity Linking Performances
 
 We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. To judge the EL system performances, we created two test sets: 1. [UMLS-based Test Set](#umls-based-test-set) 2. [Manually Annotated Test Set](#manually-annotated-test-set). 
 
 
 ### Entity Linking Performances of BENNERD on [UMLS-based Test Set](#umls-based-test-set)
-We show the EL performances on [UMLS-based test set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip). We report Accuracy@n, where n = 1, 10, 20, 30, 40, 50. Accuracy@1, gold candidate was ranked highest. Accuracy@{10, 20, 30, 40, 50} indicates, gold candidate was in top 10, 20, 30, 40 or in 50 predictions of the candidate ranker. In the performances of BENNERD with NER's prediction, we fed the NER's predictions to the entity linking model to judge the entity linking performances. In contrast to the performances of BENNERD with NER's gold and NER's true positive, we fed the gold entities and true positive entities (where the model correctly preditcs the positive category) respectively to judge the entity linking performances.
+We show the EL performances on [UMLS-based test set](https://github.com/aistairc/CORD-NER/blob/master/data/UMLS_based_Test_Set.zip). We report Accuracy@n, where n = 1, 10, 20, 30, 40, 50. Accuracy@1, gold candidate was ranked highest. Accuracy@{10, 20, 30, 40, 50} indicates, gold candidate was in top 10, 20, 30, 40 or in 50 predictions of the candidate ranker. In the performances of BENNERD with NER's prediction, we fed the NER's predictions to the entity linking model to judge the entity linking performances. In contrast to the performances of BENNERD with gold NEs and NER's true positive entities, we fed the gold entities and true positive entities (where the model correctly preditcs the positive category) respectively to judge the entity linking performances.
 ```
     -------------------------------------------------------------------------------------------
     Model                                            UMLS-based Test Set
@@ -225,7 +245,7 @@ We show the EL performances on [UMLS-based test set](https://github.com/aistairc
                                         A@1      A@10       A@20     A@30       A@40      A@50(%)
     -----------------------------    --------  --------  --------  --------  --------  --------
     BENNERD + NER's Prediction         27.61     44.56     49.74     51.88     53.08     54.19
-    BENNERD + NER's Gold               29.78     48.33     53.89     56.22     57.53     58.74
+    BENNERD + Gold NEs                 29.78     48.33     53.89     56.22     57.53     58.74
     BENNERD + NER's True Positive      30.31     48.91     54.60     56.95     58.27     59.49
     -------------------------------------------------------------------------------------------
 ```
@@ -251,11 +271,11 @@ This work is based on results obtained from a project commissioned by the Public
 
 # Contact
 * [Mohammad Golam Sohrab](https://orcid.org/0000-0001-5540-7834): sohrab.mohammad@aist.go.jp
-* Khoa N. A. Duong: khoa.duong@aist.go.jp
-* [Makoto Miwa](https://scholar.google.com/citations?user=lhpx2fkAAAAJ&hl=en): makoto-miwa@toyota-ti.ac.jp
-* Goran Topi'c: goran.topic@aist.go.jp
-* Masami Ikeda: ikeda-masami@aist.go.jp
-* [Hiroya Takamura](https://scholar.google.com/citations?user=o57RFqgAAAAJ&hl=en): takamura.hiroya@aist.go.jp
+* Khoa N. A. Duong
+* Makoto Miwa
+* Goran Topić
+* Masami Ikeda
+* Hiroya Takamura
 
 # Citation
 If you find this work useful by using this implementation, please cite this [paper](under review) (Under Review). Thanks!!!
