@@ -267,4 +267,4 @@ This work is based on results obtained from a project commissioned by the Public
 * Hiroya Takamura
 
 # Citation
-If you find this work useful by using this implementation, please cite this [paper](under review) (Under Review). Thanks!!!
+The paper entitled with "BENNERD: A Neural Named Entity Linking System for COVID-19" has been accepted in the system demonstration of EMNLP 2020. Citation details will appear soon. Thanks!!!
