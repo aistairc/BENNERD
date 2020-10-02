@@ -237,15 +237,15 @@ We show the EL performances on the [UMLS-based test set](#umls-based-test-set). 
     -----------------------------    --------  --------  --------  --------  --------  --------
     Setting1: Trained on Manually Annotated MedMention Dataset 
     -------------------------------------------------------------------------------------------
-    BENNERD + NER's Prediction         27.61     44.56     49.74     51.88     53.08     54.19
+    BENNERD + Predicted NEs            27.61     44.56     49.74     51.88     53.08     54.19
     BENNERD + Gold NEs                 29.78     48.33     53.89     56.22     57.53     58.74
-    BENNERD + NER's True Positive      30.31     48.91     54.60     56.95     58.27     59.49
+    BENNERD + True Positive NEs        30.31     48.91     54.60     56.95     58.27     59.49
     -------------------------------------------------------------------------------------------
     Setting2: Trained on UMLS-based Automatically Annotated Extended CORD-NER Dataset 
     -------------------------------------------------------------------------------------------
-    BENNERD + NER's Prediction         47.46       -         -       69.87       -       72.07
+    BENNERD + Predicted NEs            47.46       -         -       69.87       -       72.07
     BENNERD + Gold NEs                 50.73       -         -       75.58       -       78.13
-    BENNERD + NER's True Positive      53.90       -         -       79.36       -       81.87
+    BENNERD + True Positive NEs        53.90       -         -       79.36       -       81.87
     -------------------------------------------------------------------------------------------
 ```
 
