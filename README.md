@@ -271,6 +271,7 @@ This work is based on results obtained from a project commissioned by the Public
 # Contact
 * [Mohammad Golam Sohrab](https://orcid.org/0000-0001-5540-7834): sohrab.mohammad@aist.go.jp
 * Khoa N. A. Duong
+* Hai-Long Trieu
 * Makoto Miwa
 * Goran Topić
 * Masami Ikeda
