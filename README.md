@@ -123,7 +123,7 @@ Since the manually annotated CORD-NER test set is not publicly available, we can
     SciSpacy*             -        -       -      35.00     10.81  16.52    37.54    42.68   39.94    36.38    18.60    24.62
     (BC5CDR)
     ---------------   ---------  ------  -----  ---------  ------  -----  ---------  ------  -----  ---------  ------   -----
-    BENNERD             76.07    74.80   75.45    83.55     84.60  84.07    84.85    84.90   84.92    82.83    83.23    83.03
+    BENNERD             76.07    74.80   75.45    83.55     84.60  84.07    84.85    84.90   84.92    80.85    80.81    80.83
     -------------------------------------------------------------------------------------------------------------------------
 
 - [SciSpacy (BIONLP13CG)](https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.2.5/en_ner_bionlp13cg_md-0.2.5.tar.gz) is a [SciSpacy](https://allenai.github.io/scispacy/) NER model trained on the BIONLP13CG corpus.
