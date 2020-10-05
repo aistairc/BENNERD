@@ -260,8 +260,8 @@ We show the EL performances on the [manually annotated test set](#manually-annot
                                        A@1       A@10      A@20      A@30      A@40     A@50(%)
     -------------------------         -------   -------   -------   -------   -------   -------
     BENNERD + Setting1                 24.27     42.95     47.07     48.81     50.00     50.92
-    BENNERD + Setting2                 31.84       -         -       56.87       -       60.12
-    BENNERD + String Matching          30.21       -         -       41.00       -       41.00
+    BENNERD + Setting2                 31.84     50.25     54.53     56.87     58.39     60.12
+    BENNERD + String Matching          30.21     41.00     41.00     41.00     41.00     41.00
     -------------------------------------------------------------------------------------------
 ```
 
