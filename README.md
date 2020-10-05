@@ -243,9 +243,9 @@ We show the EL performances on the [UMLS-based test set](#umls-based-test-set). 
     -------------------------------------------------------------------------------------------
     Setting2: Trained on UMLS-based Automatically Annotated Extended CORD-NER Dataset 
     -------------------------------------------------------------------------------------------
-    BENNERD + Predicted NEs            47.46       -         -       69.87       -       72.07
-    BENNERD + Gold NEs                 50.73       -         -       75.58       -       78.13
-    BENNERD + True Positive NEs        53.90       -         -       79.36       -       81.87
+    BENNERD + Predicted NEs            47.46      64.32    67.70     69.87     71.12     72.07
+    BENNERD + Gold NEs                 50.73      69.31    73.10     75.58     77.03     78.13
+    BENNERD + True Positive NEs        53.90      73.06    76.90     79.36     80.79     81.87
     -------------------------------------------------------------------------------------------
 ```
 
