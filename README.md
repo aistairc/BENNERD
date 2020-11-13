@@ -2,7 +2,7 @@
 
 - [Overview](#overview)
 - [BENNERD DEMO](#bennerd-demo)
-- [CORD-NERD Data Set](#test-sets)
+- [CORD-NERD Data Set](#cord-nerd-dataset)
 - [BENNERD Description](#bennerd-description)
 - [Evaluation](#evaluation)
 - [Acknowledgement](#acknowledgement)
@@ -230,7 +230,7 @@ We show the categorical performances of NER model trained on [ClinicalCovid BERT
   
 ## Entity Linking Performances
 
-We evaluate our candidate EL system performances based on two settings.  In the setting 1, we train the CUIs based on manually annotated MedMention dataset.  In the setting 2,  the BENNERD model is trained on automatically annotated [CORD-NERD](https://drive.google.com/file/d/1uJgtqqggkVXv7uGLuG3wYWstIaa7bqRO/view?usp=sharing) dataset. Besides, we judge the EL system performances on the [two test sets](#test-sets). 
+We evaluate our candidate EL system performances based on two settings.  In the setting 1, we train the CUIs based on manually annotated MedMention dataset.  In the setting 2,  the BENNERD model is trained on automatically annotated [CORD-NERD](https://drive.google.com/file/d/1uJgtqqggkVXv7uGLuG3wYWstIaa7bqRO/view?usp=sharing) dataset. 
 
 ### Entity Linking Performances of BENNERD on [UMLS-based Test Set](#umls-based-test-set)
 We show the EL performances on the [UMLS-based test set](#umls-based-test-set). We report Accuracy@n, where n = 1, 10, 20, 30, 40, 50. Accuracy@1, gold candidate was ranked highest. Accuracy@{10, 20, 30, 40, 50} indicates, gold candidate was in top 10, 20, 30, 40 or in 50 predictions of the candidate ranker. In the performances of BENNERD with NER's prediction, we fed the NER's predictions to the entity linking model to judge the entity linking performances. In contrast to the performances of BENNERD with gold NEs and NER's true positive entities, we fed the gold entities and true positive entities (where the model correctly predicts the positive category) respectively to judge the entity linking performances.
