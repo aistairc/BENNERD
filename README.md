@@ -19,7 +19,7 @@ We present our recent efforts related to the coronavirus disease in 2019.
 Our main objective is to provide our recent biomedical entity linking system for end-users to facilitate and accelerate COVID-19 studies.
 We provide an **[web interface](#bennerd-demo)** so that end-users can easily analyze their texts with our system. 
 The **[evaluation](#evaluation)** of our method are also reported on this page with comparing with several existing state-of-the-art systems.
-We also release our manually annotated test- and UMLS-based **[test sets](#test-sets)** that are used to evaluate our system to support the NLP community in developing the natural language processing (NLP) systems for the coronavirus disease.
+We also release our UMLS-based automatically annotated annotated [CORD-NERD](https://drive.google.com/file/d/1uJgtqqggkVXv7uGLuG3wYWstIaa7bqRO/view?usp=sharing) dataset and [manually annotated test set](https://github.com/aistairc/BENNERD/blob/master/data/Manually_Annotated_Test_Set.zip) that are used to evaluate our system to support the NLP community in developing the natural language processing (NLP) systems for the coronavirus disease.
 
 
 # BENNERD DEMO
@@ -49,7 +49,7 @@ To evaluate the EL performance on [CORD-NERD](https://drive.google.com/file/d/1u
 
 ## Manually Annotated Test Set
 
-In addition with the [UMLS-based test set](#umls-based-test-set), we assigned a biologist to annotate 1,000 random sentences based on chemical, disease, and gene types along with its corresponding CUI to create a manually annotated test set. 
+In addition with the [UMLS-based test set](#umls-based-test-set), we assigned a biologist to annotate 1,000 random sentences based on chemical, disease, and gene types along with its corresponding CUI to create a [manually annotated test set](https://github.com/aistairc/BENNERD/blob/master/data/Manually_Annotated_Test_Set.zip). 
 
 ## Sample Data Format of Extended CORD-NER 
 Examples of annotation for an entity (**T**), a normalization (**N**) are shown in the following. Text-bound annotation identifies a specific span of text and assigns it a type. In text-bound annotation (**T1**) of a span “**Angiotensin-converting enzyme 2**”,  **0** denotes start-offset and **31** denotes end-offset of the annotation span, where type is **GENE_OR_GENOME**. The normalization annotation (**N1**) is attached to the text-bound annotation (**T1**) which is associated with the unified medical language system ([UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html)) entry with the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) concept unique identifier (CUI) as **C0960880**. 
