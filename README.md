@@ -32,6 +32,7 @@ Users can access our demo via [http://prm-ezcatdb.cbrc.jp/bennerd/](http://prm-e
 # CORD-NERD Data Set
 
 We are the first to perform entity linking (EL) task on [CORD-19](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge) data set. [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset comprises only NER  task.  To solve the EL task, we expand this dataset by leveraging a CUI for each mention in the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset, we call this covid-19 open research dataset for named entity recognition and disambiguation [CORD-NERD](https://drive.google.com/file/d/1uJgtqqggkVXv7uGLuG3wYWstIaa7bqRO/view?usp=sharing) dataset that includes UMLS-based training, development, and test sets. Available at, 
+
 * [CORD-NERD](https://drive.google.com/file/d/1uJgtqqggkVXv7uGLuG3wYWstIaa7bqRO/view?usp=sharing)
 
 We use the most recent [UMLS version 2020AA release](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) that includes coronavirus-related concepts. To create a dataset for EL, we use a dictionary matching approach based on exact match using [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) KB. [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) includes 10,470,248 mentions, among which 6,794,126 and 3,676,122 mentions are respectively present and absent in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html). Therefore, the entity coverage ratio of [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) over the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) is 64.89%. We annotate the entity mentions that are not found in the [UMLS](https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html) with CUI_LESS. Finally we augment the [CORD-NER](https://uofi.app.box.com/s/k8pw7d5kozzpoum2jwfaqdaey1oij93x) dataset with CUI for each correspondence mention.
@@ -229,7 +230,7 @@ We show the categorical performances of NER model trained on [ClinicalCovid BERT
   
 ## Entity Linking Performances
 
-We judge the EL system performances on the [two test sets](#test-sets). 
+We evaluate our candidate EL system performances based on two settings.  In the setting 1, we train the CUIs based on manually annotated MedMention dataset.  In the setting 2,  the BENNERD model is trained on automatically annotated [CORD-NERD](https://drive.google.com/file/d/1uJgtqqggkVXv7uGLuG3wYWstIaa7bqRO/view?usp=sharing) dataset. Besides, we judge the EL system performances on the [two test sets](#test-sets). 
 
 ### Entity Linking Performances of BENNERD on [UMLS-based Test Set](#umls-based-test-set)
 We show the EL performances on the [UMLS-based test set](#umls-based-test-set). We report Accuracy@n, where n = 1, 10, 20, 30, 40, 50. Accuracy@1, gold candidate was ranked highest. Accuracy@{10, 20, 30, 40, 50} indicates, gold candidate was in top 10, 20, 30, 40 or in 50 predictions of the candidate ranker. In the performances of BENNERD with NER's prediction, we fed the NER's predictions to the entity linking model to judge the entity linking performances. In contrast to the performances of BENNERD with gold NEs and NER's true positive entities, we fed the gold entities and true positive entities (where the model correctly predicts the positive category) respectively to judge the entity linking performances.
@@ -285,9 +286,9 @@ This work is based on results obtained from a project commissioned by the Public
 If you find this work helpful, please use the following citation:
 
 ```
-@inproceedings{sohrab_bennerd_2020,
+@inproceedings{bennerd_2020,
     title = "BENNERD: A Neural Named Entity Linking System for COVID-19",
-    author = "Sohrab, Mohammad Golam and Duong, Khoa and and Miwa, Makoto and Topić, Goran and Masami, Ikeda and Takamura, Hiroya",
+    author = "Sohrab, Mohammad Golam and Duong, Khoa and Miwa, Makoto and Topić, Goran and Masami, Ikeda and Takamura, Hiroya",
     booktitle = "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations",
     month = oct,
     year = "2020",
