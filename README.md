@@ -2,7 +2,7 @@
 
 - [Overview](#overview)
 - [BENNERD DEMO](#bennerd-demo)
-- [Test Sets](#test-sets)
+- [CORD-NERD Data Set](#test-sets)
 - [BENNERD Description](#bennerd-description)
 - [Evaluation](#evaluation)
 - [Acknowledgement](#acknowledgement)
