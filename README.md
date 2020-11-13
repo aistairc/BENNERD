@@ -282,4 +282,20 @@ This work is based on results obtained from a project commissioned by the Public
 * Hiroya Takamura
 
 # Citation
-The paper entitled with "BENNERD: A Neural Named Entity Linking System for COVID-19" has been accepted in the system demonstration of EMNLP 2020. Citation details will appear soon. Thanks!!!
+If you find this work helpful, please use the following citation:
+
+```
+@inproceedings{sohrab_bennerd_2020,
+    title = "BENNERD: A Neural Named Entity Linking System for COVID-19",
+    author = "Sohrab, Mohammad Golam and Duong, Khoa and and Miwa, Makoto and Topić, Goran and Masami, Ikeda and Takamura, Hiroya",
+    booktitle = "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations",
+    month = oct,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.emnlp-demos.24",
+    pages = "182--188",
+} 
+```
+
+Thanks!!!
