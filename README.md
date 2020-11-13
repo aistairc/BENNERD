@@ -19,7 +19,7 @@ We present our recent efforts related to the coronavirus disease in 2019.
 Our main objective is to provide our recent biomedical entity linking system for end-users to facilitate and accelerate COVID-19 studies.
 We provide an **[web interface](#bennerd-demo)** so that end-users can easily analyze their texts with our system. 
 The **[evaluation](#evaluation)** of our method are also reported on this page with comparing with several existing state-of-the-art systems.
-We also release our UMLS-based automatically annotated annotated [CORD-NERD](https://drive.google.com/file/d/1uJgtqqggkVXv7uGLuG3wYWstIaa7bqRO/view?usp=sharing) dataset and [manually annotated test set](https://github.com/aistairc/BENNERD/blob/master/data/Manually_Annotated_Test_Set.zip) that are used to evaluate our system to support the NLP community in developing the natural language processing (NLP) systems for the coronavirus disease.
+We also release our UMLS-based automatically annotated [CORD-NERD](https://drive.google.com/file/d/1uJgtqqggkVXv7uGLuG3wYWstIaa7bqRO/view?usp=sharing) dataset and [manually annotated test set](https://github.com/aistairc/BENNERD/blob/master/data/Manually_Annotated_Test_Set.zip) that are used to evaluate our system to support the NLP community in developing the natural language processing (NLP) systems for the coronavirus disease.
 
 
 # BENNERD DEMO
